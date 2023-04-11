@@ -1,0 +1,57 @@
+.location-input {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+}
+
+.map {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
+.departure-time {
+  border-color: var(--light-grey);
+  color: var(--placeholder-grey);
+}
+.departure-time-selected {
+  color: black; 
+}
+.confirm-button {
+  width: 10%;  
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--light-blue);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+    background-color: var(--yellow);
+    color: var(--blue);
+  }
+  .cancel-button {
+    width: 10%;  
+    background-color: var(--red);
+    color: var(--off-white);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--dark-red);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+      background-color: var(--dark-red);
+    }
+.button-container {
+  display: flex;
+  justify-content: center;
+}
