@@ -1,53 +1,89 @@
 .find-rides-page {
-    width: 50%;
-    margin: 0 auto;
-    padding: 2rem;
-    margin-top: 3rem;
-  }
-  
-  .rides-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .ride-item {
-    background-color: var(--off-white);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 3rem;
+  box-sizing: border-box;
+}
+
+.rides-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ride-item {
+  background-color: var(--off-white);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ride-info {
+  flex: 1;
+  min-width: 50%;
+  box-sizing: border-box;
+}
+
+.ride-item h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.ride-item p {
+  margin: 0.25rem 0;
+}
+
+.join-button {
+  background-color: var(--light-grey);
+  color: black;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.join-button:hover {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+  border-color: var(--dark-blue);
+}
+
+.sort label {
+  margin-right: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.filter label {
+  margin-right: 0.5rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
   .ride-info {
-    flex: 1;
+    min-width: 100%;
   }
-  
-  .ride-item h3 {
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-  }
-  
-  .ride-item p {
-    margin: 0.25rem 0;
-  }
-  
-  .join-button {
-    background-color: var(--light-grey);
-    color: black;
-    border: 1px solid var(--light-grey);
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .join-button:hover{
-    background-color: var(--yellow);
-    color: var(--dark-blue);
-    border-color: var(--dark-blue);
-    
 }

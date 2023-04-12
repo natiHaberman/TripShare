@@ -22,12 +22,13 @@ const NewRide = (props) => {
   const [departureTime, setDepartureTime] = useState(new Date());
   const [timeChosen, setTimeChosen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
   // when navigating from rides
   const path = useLocation();
   let ride = null;
   useEffect(() => {
     ride = path?.state;
-  },[]);
+  }, []);
 
   useEffect(() => {
     if (ride?.role === "Passenger") {
@@ -40,41 +41,53 @@ const NewRide = (props) => {
   }, [ride]);
 
   const toggleRole = () => {
-    setRole(
-      role === SOLO_PASSENGER ? SOLO_DRIVER : SOLO_PASSENGER
-    );
+    setRole(role === SOLO_PASSENGER ? SOLO_DRIVER : SOLO_PASSENGER);
   };
 
   const handleConfirm = () => {
-    if (origin && destination && timeChosen) {
+    if (origin && destination) {
       setRouteConfirmed(true);
     } else {
       //show error message
     }
-  }
+  };
 
   const handleCancel = () => {
     setRouteConfirmed(false);
     setOrigin("");
     setDestination("");
     setTimeChosen(false);
-  }
+  };
 
   return (
     <div className="center">
       <Card>
-      <Modal
-        show={showModal}
-        onCancel={() => setShowModal(false)}
-        header="Modal Header"
-        footer={<div><button onClick={() => setShowModal(false)}>Cancel</button>
-        <button onClick={() => {
-          setShowModal(false);
-          handleCancel();
-        }}>Contine</button></div>}
-      >
-        <p>This is the content inside the modal.</p>
-      </Modal>
+        <Modal
+          show={showModal}
+          onCancel={() => setShowModal(false)}
+          header="Cancel Ride"
+          footer={
+            <div className="modal-options">
+              <button
+                className="modal-confirm-button"
+                onClick={() => {
+                  setShowModal(false);
+                  handleCancel();
+                }}
+              >
+                Contine
+              </button>
+              <button
+                className="modal-cancel-button"
+                onClick={() => setShowModal(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          }
+        >
+          <p>Are you sure yoo want to cancel your ride?</p>
+        </Modal>
         <ToggleButton
           option1="Passenger"
           option2="Driver"
@@ -127,7 +140,10 @@ const NewRide = (props) => {
         <Map className="map" start={origin} destination={destination} />
         <div className="button-container">
           {routeConfirmed ? (
-            <button className="cancel-button" onClick={() => setShowModal(true)}>
+            <button
+              className="cancel-button"
+              onClick={() => setShowModal(true)}
+            >
               Cancel
             </button>
           ) : (

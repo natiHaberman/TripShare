@@ -9,13 +9,23 @@
 }
 
 .user-info {
-  width: 60%;
+  width: 100%;
+  max-width: 800px;
   background-color: var(--off-white);
   border-radius: 5px;
   padding: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .user-profile {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
 
+  .user-info {
+    padding: 10px;
+  }
+}
 
 h1 {
   margin-bottom: 30px;
@@ -23,29 +33,33 @@ h1 {
 
 h2 {
   margin-bottom: 10px;
-
 }
+
 h3 {
   margin-bottom: 5px;
 }
+
 .inline-field {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
+
 .inline-field h3 {
   margin-left: 0;
   flex-grow: 1;
 }
+
 .edit-field {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+
 .edit-field input {
   margin-left: 1rem;
   margin-top: 25px;
-  border:none;
+  border: none;
   background-color: var(--off-white);
   font-size: 1.17em; /* Match h3 font size */
 }
