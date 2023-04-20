@@ -41,7 +41,8 @@ const handleLogin = async (req, res, next) => {
       });
       foundUser.refreshToken = refreshToken;
       await foundUser.save();
-      res.json({ accessToken });
+      const userID = foundUser._id;
+      res.json({ accessToken, userID});
     } else {
       const error = new HttpError("Incorrect email or password", 401);
       return next(error);
