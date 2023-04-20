@@ -1,0 +1,33 @@
+20230419	15:24:29	8015c156-977b-4fc8-a734-49124c8aa242	Error: No user exists with that email.
+20230419	15:25:16	25ea0675-0097-42a2-8b1d-392baf2651b1	Error: Email is already registered
+20230419	15:25:30	e574e78a-ac5f-44bf-a6a7-f57a99c2bbb8	Error: role and email are required.
+20230419	15:33:29	a56121b4-0c7a-45f2-b6fa-8a5b6dbd59c1	Error: role and email are required.
+20230419	16:21:24	97b0d54a-f1b8-4090-b90a-d50e451776d2	Error: Could not find user for provided id.
+20230419	16:22:46	2514127a-3787-45fe-b106-76fd6ff086ab	Error: Could not find user for provided id.
+20230419	16:30:14	f7cf5ec3-04a8-45b3-8f5a-63bbb3c14995	Error: role and email are required.
+20230419	16:30:20	302f3ae4-b1b4-42da-9795-34225051752b	SyntaxError: Unexpected token } in JSON at position 32
+20230419	16:30:24	7cbe2e66-98a4-407b-932d-0ce6e140e0a8	Error: role and email are required.
+20230419	16:35:24	0bdcfe44-c258-4f77-8e9e-494b93363ce5	Error: Could not find user for provided id.
+20230419	16:56:29	775ecd05-6804-468e-8e8e-be931855f8ca	Error: Something went wrong, could not find ride.
+20230419	16:57:37	d11d3c27-f605-4cdf-8adc-c7270e57a32a	Error: Something went wrong, could not find ride.
+20230419	16:57:42	33187fab-72aa-41d1-9fe5-37a4ce801250	Error: Something went wrong, could not find ride.
+20230419	16:57:54	19e27342-f05c-458b-8ebe-e7f31e8226fb	Error: Something went wrong, could not find ride.
+20230419	16:58:11	7e2600aa-4009-4884-8d96-59ba733da42d	Error: Something went wrong, could not find rides.
+20230419	16:58:25	51f55313-f5f6-4d8c-8bba-7a744c4ce1af	Error: Something went wrong, could not find ride.
+20230419	16:58:58	92436b0c-dc17-4c0a-b05d-d72661cde89d	Error: rideID and email are required.
+20230419	16:59:03	62ac6b50-3957-411b-b1be-a2265cbe572d	Error: Something went wrong, could not find ride.
+20230419	17:05:57	d01fcba2-585a-40e6-b4c9-5efa4d53a56d	Error: Joining ride failed, please try again.
+20230419	17:06:59	c1ff7bcf-4f82-4e49-a38b-dd254aa4bf3a	Error: role, email, origin and destination are required.
+20230419	17:09:48	36c45730-6f17-4c14-bed8-d1d5fe47e436	Error: Ride is full.
+20230419	17:23:53	3837bac4-eb89-4886-8d8f-33e77b44ab7a	Error: Please log in.
+20230419	17:25:31	01e5689d-3641-433b-8a74-6763a46b38ad	Error: Fetching ride failed, please try again later.
+20230419	17:26:51	e83de7e2-852f-4e23-9a96-89f143825f8e	Error: Deleting ride failed, please try again later.
+20230419	17:33:47	902a7572-840c-4563-9f91-bb8c824eecfc	Error: Deleting ride failed, please try again later.
+20230419	19:02:00	82e17785-208e-4ec0-a15e-7ef8fc394c51	Error: Please log in.
+20230419	19:02:14	d5de8345-3f4d-4907-a86d-d3abc5ebe8b3	Error: Please log in.
+20230419	19:04:15	1f9230d0-2cbf-4709-a773-48fbb143d41b	Error: Please log in.
+20230419	19:04:38	b749dfb8-ba75-4673-94b1-ea5cec7d5e8b	Error: Please log in.
+20230419	19:04:43	88c56288-9ce9-4051-9cfb-727fb058eaad	Error: Please log in.
+20230419	19:05:08	a785ebad-65c2-43a0-8cd4-97c9d7cdfaed	Error: rideID and email are required.
+20230419	19:09:08	2f3a4af7-9c24-440a-822c-ac503d43a4b7	Error: Please log in.
+20230419	19:09:26	9a27e901-8d9e-4494-a87d-7d2c2a8dd639	Error: Please log in.
