@@ -6,6 +6,9 @@ const userSchema = new Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true,},
+  rating: {type: Number, default: 0},
+  requests: {type: Array, default: []},
+  reviews: {type: Array, default: []},
   refreshToken: String
 });
 

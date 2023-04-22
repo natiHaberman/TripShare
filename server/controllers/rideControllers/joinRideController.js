@@ -3,9 +3,9 @@ const User = require("../../models/user");
 const HttpError = require("../../models/http-error");
 
 const handleJoinRide = async (req, res, next) => {
-  const { rideID, email} = req.body;
-  if (!rideID || !email) {
-    const error = new HttpError("rideID and email are required.", 422);
+  const { rideID, userID} = req.body;
+  if (!rideID || !userID) {
+    const error = new HttpError("rideID and userID are required.", 422);
     return next(error);
   }
   let ride;
@@ -25,8 +25,7 @@ const handleJoinRide = async (req, res, next) => {
   }
   let user;
   try {
-    user = await User.findOne({ email: email });
-    console.log(user);
+    user = await User.findById(userID);
   } catch (err) {
     const error = new HttpError(
       "Something went wrong, could not find user.",
@@ -35,19 +34,18 @@ const handleJoinRide = async (req, res, next) => {
     return next(error);
   }
   if (!user) {
-    const error = new HttpError("Could not find user for provided email.", 404);
+    const error = new HttpError("Could not find user for provided id.", 404);
     return next(error);
   }
-
   try {
-    if (!ride.driver) {
-        ride.driver = user._id;
+    if (!ride.driver && ride.passenger.toString() !== userID) {
+        ride.driver = userID;
     }
-    else if (!ride.passenger) {
-        ride.passenger = user._id;
+    else if (!ride.passenger && ride.driver.toString() !== userID) {
+        ride.passenger = userID;
     }
     else {
-        const error = new HttpError("Ride is full.", 404);
+        const error = new HttpError("Cannot join ride.", 404);
         return next(error);
     }
     ride.type = "confirmed";

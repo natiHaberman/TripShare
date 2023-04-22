@@ -8,24 +8,28 @@ function Auth() {
   const EMAIL_REQUIRMENT = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const PASSWORD_REQUIRMENT =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
-  const auth = useContext(AuthContext);
   const [hasAccount, setHasAccount] = useState(true);
   const [passwordValue, setPasswordValue] = useState("");
   const [showErrorMsg, setShowErrorMsg] = useState(false);
+  const [emailValue, setEmailValue] = useState("");
   const [validity, setValidity] = useState({
     email: false,
     password: false,
     confirmPassword: false,
   });
+  const { login } = useContext(AuthContext);
 
   const toggleHasAccount = () => {
     setHasAccount((prevHasAccount) => !prevHasAccount);
     setShowErrorMsg(false);
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (allFieldsValid()) auth.login();
-    else setShowErrorMsg(true);
+    if (allFieldsValid()) {
+      await login(emailValue, passwordValue);
+    } else {
+      setShowErrorMsg(true);
+    }
   };
 
   const handleValidationChange = (name, isValid) =>
@@ -54,9 +58,13 @@ function Auth() {
               errorMsg={"Please enter a valid email address"}
               condition={EMAIL_REQUIRMENT}
               placeholder={"Email"}
-              onChange={(isValid) => handleValidationChange("email", isValid)}
+              onChange={(isValid, enteredValue) => {
+                handleValidationChange("email", isValid);
+                setEmailValue(enteredValue);
+              }}
             />
             <Input
+              type="password"
               errorMsg={"Please enter a valid password"}
               condition={PASSWORD_REQUIRMENT}
               placeholder={"Password"}
@@ -67,6 +75,7 @@ function Auth() {
             />
             {!hasAccount && (
               <Input
+                type="password"
                 errorMsg={"Must match password"}
                 condition={(enteredValue) => enteredValue === passwordValue}
                 placeholder={"Confirm Password"}
@@ -75,10 +84,12 @@ function Auth() {
                 }
               />
             )}
-              <button className="submit-button" type="submit">
-                {hasAccount ? "Log in" : "Sign up"}
-              </button>
-              {showErrorMsg && <p className="error-msg">Please fill out all fields correctly</p>}
+            <button className="submit-button" type="submit">
+              {hasAccount ? "Log in" : "Sign up"}
+            </button>
+            {showErrorMsg && (
+              <p className="error-msg">Please fill out all fields correctly</p>
+            )}
           </form>
 
           <div className="toggle-mode">

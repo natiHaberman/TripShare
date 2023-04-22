@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const MapInput = ({ placeholder, value, setValue }) => {
+const MapInput = ({ placeholder, value, setValue, onPlaceSelected }) => {
   const inputRef = useRef();
 
   useEffect(() => {
@@ -9,14 +9,14 @@ const MapInput = ({ placeholder, value, setValue }) => {
       autocomplete.addListener("place_changed", () => {
         const place = autocomplete.getPlace();
         setValue(place.formatted_address);
+        onPlaceSelected(place.formatted_address);
       });
     }
-  }, [setValue]);
+  }, [setValue, onPlaceSelected]);
 
   return (
     <input
       ref={inputRef}
-      className="location-input"
       placeholder={placeholder}
       value={value}
       onChange={(e) => setValue(e.target.value)}

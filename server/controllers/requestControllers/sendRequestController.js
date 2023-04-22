@@ -4,9 +4,9 @@ const Request = require("../../models/request");
 const HttpError = require("../../models/http-error");
 
 const handleSendRequest = async (req, res, next) => {
-    const { rideID, email } = req.body;
-    if (!rideID || !email) {
-        const error = new HttpError("rideID and email are required.", 422);
+    const { rideID, userID } = req.body;
+    if (!rideID || !userID) {
+        const error = new HttpError("rideID and userID are required.", 422);
         return next(error);
     }
     let ride;
@@ -29,7 +29,7 @@ const handleSendRequest = async (req, res, next) => {
     }
     let user;
     try {
-        user = await User.findOne({ email: email });
+        user = await User.findById(userID);
     }
     catch (err) {
         const error = new HttpError(
@@ -39,12 +39,12 @@ const handleSendRequest = async (req, res, next) => {
         return next(error);
     }
     if (!user) {
-        const error = new HttpError("Could not find user for provided email.", 404);
+        const error = new HttpError("Could not find user for provided id.", 404);
         return next(error);
     }
     try {
         await Request.create({
-            sender: user._id,
+            sender: userID,
             ride: ride._id,
             recipient: ride.driver || ride.passenger,
             time: new Date(),

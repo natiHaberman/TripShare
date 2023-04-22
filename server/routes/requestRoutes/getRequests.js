@@ -2,6 +2,6 @@ const express = require('express');
 const router = express.Router();
 const getRequestsController = require('../../controllers/requestControllers/getRequestsController');
 
-router.get('/', getRequestsController.handleGetRequests);
+router.get('/:uid', getRequestsController.handleGetRequests);
 
 module.exports = router;

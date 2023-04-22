@@ -4,30 +4,28 @@ const Request = require("../../models/request");
 const HttpError = require("../../models/http-error");
 
 const handleDeleteRequest = async (req, res, next) => {
-    const { rideID, email, role } = req.body;
-    if (!rideID || !email || !role) {
-        const error = new HttpError("rideID, role and email are required.", 422);
+    const { requestID, userID} = req.body;
+    if (!requestID || !userID) {
+        const error = new HttpError("userID and requestID are required.", 422);
         return next(error);
      };
-    let ride;
+    let request;
     try {
-        ride = await Ride.findById(rideID);
-        console.log(ride);
+        request = await Request.findById(requestID);
     } catch (err) {
         const error = new HttpError(
-            "Something went wrong, could not find ride.",
+            "Something went wrong, could not find request.",
             500
         );
         return next(error);
     }
-    if (!ride) {
-        const error = new HttpError("Could not find ride for provided id.", 404);
+    if (!request) {
+        const error = new HttpError("Could not find request for provided id.", 404);
         return next(error);
     }
     let user;
     try {
-        user = await User.findOne({ email: email });
-        console.log(user);
+        user = await User.findById(userID);
     }
     catch (err) {
         const error = new HttpError(
@@ -37,20 +35,15 @@ const handleDeleteRequest = async (req, res, next) => {
         return next(error);
     }
     if (!user) {
-        const error = new HttpError("Could not find user for provided email.", 404);
+        const error = new HttpError("Could not find user for provided id.", 404);
+        return next(error);
+    }
+    if (request.sender?.toString() !== userID && request.recipient?.toString() !== userID) {
+        const error = new HttpError("You are not authorized to delete this request.", 401);
         return next(error);
     }
     try {
-        if (role === "sender") {
-            await Request.deleteOne({ sender: user._id, ride: ride._id });
-        }
-        else if (role === "recipient") {
-            await Request.deleteOne({ recipient: user._id, ride: ride._id });
-        }
-        else {
-            const error = new HttpError("Request Doesn't exist", 404);
-            return next(error);
-        }
+        await Request.findByIdAndDelete(requestID);
     }
     catch (err) {
         const error = new HttpError(

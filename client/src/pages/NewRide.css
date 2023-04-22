@@ -1,27 +1,4 @@
-.location-input {
-  display: block;
-  margin-bottom: 1rem;
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid var(--light-grey);
-  border-radius: 4px;
-}
 
-.map {
-  height: 50vw;
-  max-height: 400px;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.departure-time {
-  border-color: var(--light-grey);
-  color: var(--placeholder-grey);
-}
-.departure-time-selected {
-  color: black;
-}
 
 .confirm-button, .cancel-button {
   width: 100%;

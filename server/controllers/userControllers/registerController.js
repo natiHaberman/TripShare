@@ -26,6 +26,10 @@ const handleNewUser = async (req, res, next) => {
       username: username,
       email: email,
       password: hashedPwd,
+      rating: 0,
+      requests: [],
+      reviews: [],
+      refreshToken: "",
     });
 
     res.status(201).json({ success: `New user ${username} created!` });

@@ -13,18 +13,23 @@ const Input = (props) => {
     } else {
       setIsValid(props.condition.test(enteredValue));
     }
+  }, [enteredValue, props.condition]);
+
+  useEffect(() => {
     if (isTouched && !isValid) setShowErrorMsg(true);
     else setShowErrorMsg(false);
     props.onChange(isValid, enteredValue);
-  }, [enteredValue, isTouched, isValid, props.condition]);
+  }, [isTouched, isValid, enteredValue]);
 
+  
   const handleBlur = () => {
     setIsTouched(true);
   };
 
   return (
-    <div container>
+    <div className="container">
       <input
+        type={props.type}
         value={enteredValue}
         onChange={(event) => setEnteredValue(event.target.value)}
         onBlur={handleBlur}

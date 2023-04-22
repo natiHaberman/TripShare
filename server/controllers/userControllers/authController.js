@@ -21,28 +21,25 @@ const handleLogin = async (req, res, next) => {
     const match = await bcrypt.compare(password, foundUser.password);
 
     if (match) {
+      const userID = foundUser._id;
       const accessToken = jwt.sign(
         {
-          email: foundUser.email,
+          userID: foundUser._id,
         },
         process.env.ACCESS_TOKEN_SECRET,
         { expiresIn: "5m" }
       );
       const refreshToken = jwt.sign(
-        { email: foundUser.email },
+        { userID: userID },
         process.env.REFRESH_TOKEN_SECRET,
         { expiresIn: "20m" }
       );
       res.cookie("jwt", refreshToken, {
-        httpOnly: true,
-        sameSite: "None",
-        secure: true,
-        maxAge: 20 * 60 * 1000,
+        httpOnly: true, sameSite: 'None', secure: true, maxAge: 20 * 60 * 1000,
       });
       foundUser.refreshToken = refreshToken;
       await foundUser.save();
-      const userID = foundUser._id;
-      res.json({ accessToken, userID});
+      res.json({ accessToken, userID });
     } else {
       const error = new HttpError("Incorrect email or password", 401);
       return next(error);

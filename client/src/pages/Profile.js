@@ -1,8 +1,18 @@
 import React, { useState, useRef } from "react";
 import Stars from "../UIElements/Stars";
+import {findUser} from "../api/findUser";
 import "./Profile.css";
 
 const Profile = () => {
+
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const user = await findUser();
+  //     setUser(user);
+  //   })();
+  // }, []);
+
   const user = {
     name: "John Doe",
     email: "john@gmail.com",

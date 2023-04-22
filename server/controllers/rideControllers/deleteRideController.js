@@ -2,9 +2,9 @@ const Ride = require("../../models/ride");
 const HttpError = require("../../models/http-error");
 
 const handleDeleteRide = async (req, res, next) => {
-  const { rideID } = req.body;
-  if (!rideID) {
-    const error = new HttpError("rideID is required.", 422);
+  const { rideID, userID } = req.body;
+  if (!rideID || !userID) {
+    const error = new HttpError("rideID and userID are required.", 422);
     return next(error);
   }
   let ride;
@@ -19,6 +19,14 @@ const handleDeleteRide = async (req, res, next) => {
   }
   if (!ride) {
     const error = new HttpError("Could not find ride for provided id.", 404);
+    return next(error);
+  }
+  if (ride.type === "completed") {
+    const error = new HttpError("Ride is already completed.", 404);
+    return next(error);
+  }
+  if (ride.driver?.toString() !== userID && ride.passenger?.toString() !== userID) {
+    const error = new HttpError("User is unauthorized to delete ride.", 401);
     return next(error);
   }
   try {

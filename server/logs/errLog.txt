@@ -31,3 +31,236 @@
 20230419	19:05:08	a785ebad-65c2-43a0-8cd4-97c9d7cdfaed	Error: rideID and email are required.
 20230419	19:09:08	2f3a4af7-9c24-440a-822c-ac503d43a4b7	Error: Please log in.
 20230419	19:09:26	9a27e901-8d9e-4494-a87d-7d2c2a8dd639	Error: Please log in.
+20230420	13:50:08	2466f6f6-3909-4f46-8821-7a5d100f0ef6	Error: role, userID, origin and destination are required.
+20230420	13:51:04	9941e97d-ff86-4f6f-9956-a068d7d4e9d9	SyntaxError: Unexpected token } in JSON at position 95
+20230420	13:51:09	ba530e88-cdb6-409f-9634-854b967c7b4a	Error: role, userID, origin and destination are required.
+20230420	13:58:05	71325721-1155-4994-9f85-031d88dbc3c2	Error: rideID and email are required.
+20230420	14:00:45	ec715e09-f180-4bf9-8289-4265f57bcf38	Error: Could not find ride for provided id.
+20230420	14:01:22	2e976db0-07a9-4ea6-a073-4558898fcb09	Error: Please log in.
+20230420	14:02:27	0126ae58-bbe9-4ec9-bca5-03047a9b939c	Error: Cannot join ride.
+20230420	14:03:41	0304ea98-2b54-4475-9893-06338b9d340c	Error: Cannot join ride.
+20230420	14:04:01	aa202d68-509c-433f-8cbb-53657e07487d	Error: Cannot join ride.
+20230420	14:04:12	45c803ee-1573-4cd4-b35e-77108172b92d	Error: Could not find user for provided email.
+20230420	14:04:31	a0fcb56e-ab65-4876-9091-49be5ae0a6a4	Error: Cannot join ride.
+20230420	14:04:40	ec583e5b-d186-4429-9ec9-298628c633d6	Error: Please log in.
+20230420	14:05:01	8a81800e-1ed4-4700-a460-d20ecbffedef	Error: rideID and userID are required.
+20230420	14:05:15	33161586-d23a-4a80-b24f-4b5cfa840ce6	Error: Fetching ride failed, please try again later.
+20230420	14:05:20	5d26f043-f084-4772-80b7-8bbb52b9c535	Error: Fetching ride failed, please try again later.
+20230420	14:09:06	49aa8ed8-e8fb-40b1-a3b6-6e0e29f5f30d	Error: User is not part of this ride.
+20230420	14:10:25	d122615b-fda4-496c-8e7f-6486643723a0	Error: rideID and userId are required.
+20230420	14:10:39	12ac0566-765d-443b-813f-99fe3e74f0cb	Error: User is not part of this ride.
+20230420	14:29:12	f42571cb-87d2-4690-b6df-e31c9d054420	Error: Please log in.
+20230420	14:29:55	12449c5f-599f-4d53-94e1-09bf200b25e2	Error: Email is already registered
+20230420	14:30:22	3dd8145e-5d11-4d82-95ed-94905ce72246	SyntaxError: Unexpected token } in JSON at position 30
+20230420	14:30:27	e4687e54-680b-4521-af2e-8c5bc9581873	Error: Username and password are required.
+20230420	14:30:37	eb3ca8e7-8dc7-40c1-9bab-a6beaed19997	Error: Incorrect email or password
+20230420	14:32:08	550a7422-a458-4e04-99ef-cbf131a2739b	Error: role, userID, origin and destination are required.
+20230420	14:32:18	434fcee2-3faf-46c6-8afb-2b0adf0e8725	Error: Something went wrong, could not find user.
+20230420	14:33:46	41f908cc-92d7-413b-af80-968b1e6e1e12	Error: Cannot join ride.
+20230420	14:34:29	00df6af8-9144-408c-9538-2a45e77a71b9	Error: Ride is already completed.
+20230420	16:38:20	9fa12d98-084b-46f9-896e-5a059d0d2010	Error: No user exists with that email.
+20230420	16:41:47	aaaddf2e-db89-49cf-a6dd-18c18778c451	Error: No user exists with that email.
+20230420	16:45:20	96433c4e-2130-4369-a43b-d2dc5080bb42	Error: Incorrect email or password
+20230420	17:15:54	756be89e-ef5c-49cd-99f7-76a84b0d20e4	Error: Username and password are required.
+20230420	18:47:43	883e7d3b-ab23-42a7-be9a-a2394de9e1bb	Error: Username and password are required.
+20230420	18:47:44	240795cc-f695-4496-ae56-8f9699172afb	Error: Username and password are required.
+20230420	18:54:12	92564a81-cc2e-4e2c-883c-2c496fc53b87	Error: Username and password are required.
+20230420	18:55:00	fa20531c-ec62-4ad2-953d-c70e72542d96	Error: Username and password are required.
+20230420	18:58:10	ca45981c-d152-44f1-85e6-5d7196194406	Error: Username and password are required.
+20230420	18:58:11	d00c8d28-48f6-45c2-a166-d684210b7b95	Error: Username and password are required.
+20230420	18:58:12	53f8b809-608b-438a-9de1-7d764119292f	Error: Username and password are required.
+20230420	18:58:12	ede54117-8a9a-43f6-950e-6b0792d61d8e	Error: Username and password are required.
+20230420	18:59:00	1a5ed2b9-592d-45d8-b481-78dbe6b02394	Error: Username and password are required.
+20230421	11:33:37	b114cf71-287e-44fa-9474-8a897ce0c777	Error: Please log in.
+20230421	11:34:28	e4a29dc7-c898-41bb-9540-749f8fae9004	Error: Please log in.
+20230421	11:37:31	01efc865-939a-4b1e-a8ac-5cd71e2d833c	Error: Please log in.
+20230421	11:46:26	2bf85cac-894c-4ce5-b88b-1a6d4da8527b	Error: Wrong credentials.
+20230421	11:52:09	9315fcbd-9b5a-465b-bb5e-fd14559d9437	Error: Wrong credentials.
+20230421	13:58:02	12339f97-fb40-4270-8870-949a6e0340d4	Error: Please log in.
+20230421	13:58:02	28a92ffb-cbdf-4a17-9a93-99cafb57f9fb	Error: Please log in.
+20230421	13:58:18	980020a3-8611-47ef-978b-19806186cbf3	Error: Please log in.
+20230421	14:02:42	cfeb2b83-c2f7-4744-b557-d739ef255f3c	Error: Please log in.
+20230421	14:04:52	510cc102-d71e-40b2-ad21-4f97472b750b	Error: Please log in.
+20230421	14:04:52	d71390bb-2c2d-47ce-9489-1474436fcfe5	Error: Please log in.
+20230421	14:05:25	97d8f55e-1948-4f36-ad4c-9443998de108	Error: Please log in.
+20230421	14:05:25	64f9d4b4-a278-417d-bd6c-d4e917b01b52	Error: Please log in.
+20230422	11:02:34	5d37996d-2a2c-4b2e-9fc9-53678608de9f	Error: Please log in.
+20230422	11:04:57	58492351-5bf9-47d7-8dba-a7149a43bb5c	Error: Please log in.
+20230422	11:15:31	7dc8b2e9-f3de-4284-8f86-c853f5ce3e79	Error: Please log in.
+20230422	11:16:44	aa03b913-fcba-4546-a773-30a50680f3c4	Error: Please log in.
+20230422	11:17:28	6ca4f951-cac8-4d01-a01e-c691103f7d9b	Error: Please log in.
+20230422	11:19:55	2a2042e6-ac40-4ab8-a50a-918e54620bd8	Error: Please log in.
+20230422	11:20:25	1683964b-21f1-476f-a0bc-473053cc7e11	Error: Please log in.
+20230422	11:20:53	0a314a5c-bc76-497a-bdd7-6b1645dd528e	Error: Please log in.
+20230422	11:21:11	7e32df91-e255-4299-acbb-c7f30d835c0d	Error: Please log in.
+20230422	11:21:22	42a973c2-a8d1-4fa9-a308-4e7504ceaadd	Error: Please log in.
+20230422	11:22:01	3c8ceebc-46ec-469c-9243-79934e0c3e8c	Error: Please log in.
+20230422	11:22:15	2cd9becc-f54e-4a78-91ec-06ff5970b57f	Error: Please log in.
+20230422	11:23:25	3505a519-5710-4a65-aa81-ae32f9517036	Error: Please log in.
+20230422	11:24:03	b523f9a7-c5a6-4c67-8476-9dd3e7c9fa9d	Error: Please log in.
+20230422	11:24:07	45912c66-a602-4575-ab15-0a9c6a395b73	Error: Please log in.
+20230422	11:24:22	fb05510c-930b-4f03-9197-dba6ed06b902	Error: Please log in.
+20230422	11:26:50	f516a949-d6f0-45e3-b8bd-681fd7b1e048	Error: Please log in.
+20230422	11:31:46	b3d7da9d-e98c-445c-a404-7f55d72b61ac	Error: Please log in.
+20230422	11:31:46	995b910b-27ab-4be1-9cb3-d0a7aebb8d82	Error: Please log in.
+20230422	11:35:41	a7719059-cec4-4bc6-b1cb-c3afb6e8f72a	Error: Please log in.
+20230422	11:35:41	ffb4edc5-867a-42f0-928b-4566ac1df132	Error: Please log in.
+20230422	11:36:30	24d06911-52d2-4000-a80b-10e67efbd43e	Error: Please log in.
+20230422	11:36:30	bea82534-989e-40ac-82b3-324475f6109f	Error: Please log in.
+20230422	11:36:36	52b331d0-b12c-4339-9aa2-735a76672f44	Error: Please log in.
+20230422	11:36:36	c514b554-9de6-4180-8ea3-f1f54ca9f9be	Error: Please log in.
+20230422	11:37:00	df93d7d2-8afa-4b26-8998-6045f23fe828	Error: Please log in.
+20230422	11:37:00	3096eea1-4a9d-4cdb-910c-7bac5954866f	Error: Please log in.
+20230422	11:37:08	0f69b744-156e-46ee-b6db-65ba7e35bded	Error: Please log in.
+20230422	11:37:08	89943dbf-3644-4002-a7e0-f23d5c4acee3	Error: Please log in.
+20230422	11:37:25	33c0d013-016d-4573-9228-a6b53f276382	Error: Please log in.
+20230422	11:37:25	c6e3410e-e67c-4fd1-ae05-6140dc9896c2	Error: Please log in.
+20230422	11:37:35	fde3891f-fee5-4eff-a81e-b82855254ef2	Error: Please log in.
+20230422	11:37:35	33e821f1-b553-400f-b5f7-344d56099e20	Error: Please log in.
+20230422	11:38:56	812b96f0-1bcd-4850-8fc0-d495b7524555	Error: role, userID, origin and destination are required.
+20230422	11:40:51	7878cc88-f9f8-4eb9-8e47-aa1183351339	Error: Please log in.
+20230422	11:40:51	5962ae08-efce-41b0-be73-40f088f62ec7	Error: Please log in.
+20230422	11:41:24	88e15649-4d2a-456d-b809-326703dfc512	Error: Please log in.
+20230422	11:41:24	cccace31-ac8e-4be6-8125-19c17ec83a24	Error: Please log in.
+20230422	11:42:58	656c9849-4a8f-43c7-a9a9-29631546d2a4	Error: Please log in.
+20230422	11:43:32	042345fa-0967-4fc7-a277-ef8d5c01f1dd	Error: Please log in.
+20230422	11:43:50	6ab47d65-d987-4e99-bdad-aa4d4b7ed915	Error: Please log in.
+20230422	11:44:25	92523417-bc54-447c-a142-e27eb05d8085	Error: Please log in.
+20230422	11:47:16	345e38e2-cc90-4df8-b506-2f954d0800ad	Error: Please log in.
+20230422	12:21:11	69d0455f-dad9-4cc0-b3fd-0184793d37cc	Error: Please log in.
+20230422	12:21:11	d463fe0d-5cd3-45d1-ace7-4b75cf420098	Error: Please log in.
+20230422	12:21:24	94c98f84-feef-4fbb-9b18-16e0f6e62b47	Error: Please log in.
+20230422	12:21:24	f250444d-84e2-41cf-9313-728c42b9ecc1	Error: Please log in.
+20230422	12:22:25	2addbd55-392c-43fb-bbae-8c2eb2d1502b	Error: Please log in.
+20230422	12:22:25	ddd63d66-40f6-4d5a-baf5-17f22983897b	Error: Please log in.
+20230422	12:35:14	04b20f96-1a0f-4bb4-9a7e-3c16ba571b17	Error: Please log in.
+20230422	12:35:14	4c701df9-23e6-425f-8fd9-4c14bff32251	Error: Please log in.
+20230422	12:35:16	b037f4ce-6c9e-4b6d-b17d-138ffdc684a9	Error: Please log in.
+20230422	12:35:16	c97c1ba6-f1c7-45c6-ac2b-f61fce308c1b	Error: Please log in.
+20230422	12:52:11	c0890952-8bcf-42cb-8eaf-9368601d4fbc	Error: Please log in.
+20230422	12:52:30	8d81af14-0deb-40c6-ac3f-a92b24e16fbf	Error: Username, email and password are required.
+20230422	13:06:22	35d77490-9d3a-46fc-8cf2-ff188d233cdb	Error: Please log in.
+20230422	13:06:48	b446bc73-893e-4df3-b746-37ab73925438	Error: creating ride failed, please try again.
+20230422	13:07:28	969e5892-f76b-4c12-a77f-6b6d8f7a8855	Error: creating ride failed, please try again.
+20230422	13:12:47	e3748632-c82e-4cb8-96db-0e261b66d166	Error: creating ride failed, please try again.
+20230422	13:12:55	dd589f12-8753-4334-a88c-271959065819	Error: creating ride failed, please try again.
+20230422	13:12:59	95f3b94d-9dab-4ad4-b33f-5cc1529d9117	Error: creating ride failed, please try again.
+20230422	13:14:41	43365fd1-cc98-4a1b-8245-065fdab9aaf2	Error: creating ride failed, please try again.
+20230422	13:19:27	d94fc0d9-1c94-4d6c-ac89-16b31330ca7d	Error: creating ride failed, please try again.
+20230422	13:20:06	1823e4e2-f06e-4e64-8227-581f9ac8f5f3	Error: creating ride failed, please try again.
+20230422	13:20:20	331e6883-7e28-4cb2-9e2f-89a37083546f	Error: creating ride failed, please try again.
+20230422	13:21:02	be71ac79-4d93-4a11-a137-1a17e63582e0	Error: creating ride failed, please try again.
+20230422	13:22:47	b3775f90-a527-4357-81bc-3125cbedb033	Error: creating ride failed, please try again.
+20230422	13:24:00	033a58d0-4f98-4038-b52b-1b96edf16580	Error: creating ride failed, please try again.
+20230422	13:24:48	c22e67b9-d351-42d5-b85f-febd0b26b6cf	Error: creating ride failed, please try again.
+20230422	13:26:17	359ab978-e999-4b77-b4ce-31c47399c423	Error: creating ride failed, please try again.
+20230422	13:26:19	e200ce81-b4ef-4da4-8a9d-d9f2925cd5fc	Error: creating ride failed, please try again.
+20230422	13:26:20	414e07dd-34b0-4b08-8d4e-db3c547f8b3f	Error: creating ride failed, please try again.
+20230422	13:27:06	33b2ad29-8405-43c6-b33e-d4dc722dd399	Error: creating ride failed, please try again.
+20230422	13:28:27	65a30582-2447-4e41-863a-cb435ecf5f3f	Error: creating ride failed, please try again.
+20230422	13:37:07	c9e5a9fd-c9e6-4f52-a214-8a58d1c59f60	Error: role, userID, origin, destination and departure time are required.
+20230422	13:53:42	63d58d3e-547f-4a02-a632-0aba296ecf5b	Error: Unathorized access
+20230422	13:53:42	3ea5d6a8-8f7f-4fda-a37d-5ed0c0c27f7f	Error: Unathorized access
+20230422	14:02:58	11e200a1-0a23-4248-bb44-dfd75f979844	Error: creating ride failed, please try again.
+20230422	14:03:04	f417f476-96c1-4fc6-a6af-27d746e4baa0	Error: creating ride failed, please try again.
+20230422	14:03:35	fa131f77-b13e-4023-adcd-724a2b87eab2	Error: Unathorized access
+20230422	14:03:35	101c8254-bce4-4427-85eb-2590002f3ef3	Error: Unathorized access
+20230422	14:03:40	875d1120-dd15-400c-95f9-386b6dbaa3c9	Error: Unathorized access
+20230422	14:03:40	2819d8fe-0254-4ea7-abe7-98a1880191a4	Error: Unathorized access
+20230422	14:03:50	a7eef603-7b20-4a1f-b046-289531476d14	Error: No user exists with that email.
+20230422	14:03:52	111f0e0a-da92-4583-af82-117acf3dd10d	Error: No user exists with that email.
+20230422	14:13:09	d1e78137-7604-4fa7-84f1-2b453249a6bb	Error: Unathorized access
+20230422	14:13:09	c0d095a4-f206-484f-a980-73207d9bc33c	Error: Unathorized access
+20230422	14:16:53	671efe83-ea3f-40f5-9f19-80bf364f5a1f	Error: Unathorized access
+20230422	14:16:55	89644a8c-fcc9-4a39-bcc3-4cbc364c5704	Error: Unathorized access
+20230422	14:16:55	c00675da-4d81-407b-8502-97b5f9ac4211	Error: Unathorized access
+20230422	14:41:07	72f698a1-1991-4b8d-a328-898291327f60	Error: Unathorized access
+20230422	14:41:07	95ed2691-a483-4aa1-8e28-88fd52c7c866	Error: Unathorized access
+20230422	14:59:09	88ce9d81-8075-41d1-b21b-37db93d10a09	Error: Unathorized access
+20230422	14:59:09	1f77c88a-c771-434b-81b3-0c7fee63e6be	Error: Unathorized access
+20230422	14:59:13	81973c74-0306-48e5-8f23-fb714a28d7c9	Error: Unathorized access
+20230422	14:59:13	4facb0e3-f6d5-44f1-bd8c-36195d349d23	Error: Unathorized access
+20230422	14:59:33	63dabd4c-a1dd-4f32-8734-565bfe27635d	Error: Could not find this route.
+20230422	15:00:26	aa729d9b-1e63-423c-a0b7-d13815dd0d45	Error: Could not find this route.
+20230422	15:01:08	649dfad8-e39e-45d8-b51d-99df4c315109	Error: rideID and userID are required.
+20230422	15:01:54	d35f16d2-8c15-4fae-a921-ef0c02f3cf7a	Error: rideID and userID are required.
+20230422	15:02:45	72bff821-2fbd-4025-9378-07e13dd68f39	Error: Cannot join ride.
+20230422	15:03:01	e8c7ba47-c6c6-4de7-abaf-fe30b2a598e8	Error: Cannot join ride.
+20230422	16:02:48	e5a2096d-bf96-4ac6-94d9-610fc1a17095	Error: role, userID, origin, destination and departure time are required.
+20230422	16:02:55	8dfb592b-4ea5-4d6f-a386-eb9e4a86bc77	Error: role, userID, origin, destination and departure time are required.
+20230422	16:14:38	0f3d0064-99cf-4d3d-b985-187697876f8c	Error: Could not find this route.
+20230422	17:05:46	c71a7949-be24-4a74-88e6-88dfefcd954d	Error: Unathorized access
+20230422	17:05:46	31bb7ed7-49c4-4850-8426-ca4bdf7718ac	Error: Unathorized access
+20230422	17:06:52	bbf62140-c4e5-4755-94cc-eb0fa1e364b5	Error: Unathorized access
+20230422	17:07:23	8bdaa634-5f70-4e2d-9d8a-3ee6919b2825	Error: Could not find this route.
+20230422	17:07:24	061008fc-f25b-4255-8259-3f3a66c87b40	Error: Could not find this route.
+20230422	17:12:50	b5acf6e9-bec6-4519-979f-034a95373d27	Error: role, userID, origin, destination and departure time are required.
+20230422	17:27:24	5dfaeb4a-140c-4840-bb8c-349f67d37aa3	Error: Unathorized access
+20230422	17:27:24	64bb4cd4-9e97-4483-9f5a-28a7c8c0e5e7	Error: Unathorized access
+20230422	17:28:40	4399a562-8f69-43f9-beb1-f7b98e81f04a	Error: Unathorized access
+20230422	17:28:40	fb020be7-77bc-44ab-9b35-91cf5e07dcc5	Error: Unathorized access
+20230422	17:29:18	5204f71d-4fc4-4ffe-b655-f22bfd91b1b9	Error: Unathorized access
+20230422	17:29:18	488ca674-d57a-4deb-8d1d-3ca8191ef01e	Error: Unathorized access
+20230422	17:32:15	58a434fd-e802-4711-8a39-7a7c0a224d43	Error: Unathorized access
+20230422	17:32:15	9763a211-c3eb-42c0-961c-0bcb4ff4525c	Error: Unathorized access
+20230422	17:37:30	70f4e9a2-ce3e-407b-8446-515de184dd57	Error: Unathorized access
+20230422	17:37:30	5e18ad1a-840d-4ec8-a52f-7bcc141fc9eb	Error: Unathorized access
+20230422	20:25:29	53c7530a-ec64-4d3e-9e57-f8d39598dfe9	Error: Unathorized access
+20230422	20:25:29	a2698b68-08fa-48f1-a7fa-e972a236de6c	Error: Unathorized access
+20230422	20:29:23	6945b88d-e31b-4a65-916b-d98302235cf4	Error: Unathorized access
+20230422	20:29:23	41692439-d746-416b-a4e2-f63a088a947e	Error: Unathorized access
+20230422	20:29:44	1e85a0d4-f60e-4066-be5f-037f32c8a29e	Error: Unathorized access
+20230422	20:29:44	49af7c3a-9c6b-43ca-aac0-ea2fa1cbc1ae	Error: Unathorized access
+20230422	20:30:11	42b26d08-2fae-4d99-9efb-2e096ca77545	Error: Could not find this route.
+20230422	20:30:11	6840fff8-6d2c-4744-8b93-3adad33f8348	Error: Could not find this route.
+20230422	20:39:45	3f078e36-6189-4f20-ae44-05d1dcb7cb20	Error: Could not find this route.
+20230422	20:39:45	5ae8b834-4f4f-4ec9-84fd-311285076753	Error: Could not find this route.
+20230422	20:41:10	53214de4-20fd-4724-b432-3ff1db50bf2b	Error: userID is required.
+20230422	20:41:10	549fa5d9-e53f-4cd1-9c70-15266e1a3a0e	Error: userID is required.
+20230422	20:41:51	02c53230-a4a0-4018-8960-0e7e796941a2	Error: userID is required.
+20230422	20:41:51	7520e5af-4c6c-458c-9e2e-d0f00a1565de	Error: userID is required.
+20230422	20:43:03	1032a326-3449-4351-909f-cb8e53df08e1	Error: userID is required.
+20230422	20:43:03	3b0d3561-4efa-446e-a6bb-861f0aed4726	Error: userID is required.
+20230422	20:46:10	cfe31894-b4eb-4dfe-9849-3039cf99b6f9	Error: userID is required.
+20230422	20:46:10	031c23f1-0a4f-41a9-a5ab-62662a20d2a6	Error: userID is required.
+20230422	20:46:25	a5436c1a-3e3b-4c65-9be3-860f76659ab2	Error: userID is required.
+20230422	20:46:25	0ec8774b-2d76-4a8a-b8a8-ddce5308d125	Error: userID is required.
+20230422	20:48:05	32ad027d-9aa0-42fa-90cb-07b93ec42387	Error: userID is required.
+20230422	20:48:05	2ab1bf8a-8416-430c-92d3-2351a1ec032e	Error: userID is required.
+20230422	20:48:11	66b187f0-b092-4c64-b681-765f412a714a	Error: userID is required.
+20230422	20:48:11	6632da2e-d2bd-4113-a6c1-f21bb5db7bfa	Error: userID is required.
+20230422	20:51:47	5e1efc04-61d5-40f1-af54-793a9f28fe61	Error: userID is required.
+20230422	20:51:47	48f3a638-c939-402e-8440-4826f969ba22	Error: userID is required.
+20230422	20:51:55	6100c18b-ede4-42e6-b068-a616da82bfe7	Error: userID is required.
+20230422	20:51:55	1ca525c3-fb7d-4cb5-ae79-779581fecfbb	Error: userID is required.
+20230422	20:53:06	850ea4ab-1edf-4a93-86da-550f799438a0	Error: Something went wrong, could not find user.
+20230422	20:53:06	22853199-71fe-43f5-b4ca-1e62ca69648c	Error: Something went wrong, could not find user.
+20230422	20:54:34	4648cb78-ff8f-4aed-b100-168a240ccc66	Error: Something went wrong, could not find user.
+20230422	20:54:34	f35da0d6-557b-4903-897b-5393669b76de	Error: Something went wrong, could not find user.
+20230422	20:54:37	8aa85b12-29fd-4d55-ab1a-cad6a3ff4ce9	Error: Something went wrong, could not find user.
+20230422	20:54:37	3dfdab8f-4edb-4d37-8c94-e587256a3900	Error: Something went wrong, could not find user.
+20230422	20:54:57	82e76619-5119-4fad-869d-e3bb5a3197e6	Error: Something went wrong, could not find user.
+20230422	20:54:57	06f4f515-daff-4eb3-a767-7f6823509cc9	Error: Something went wrong, could not find user.
+20230422	20:55:26	52cc0d41-7b4f-47e3-85b5-07d925c5eff7	Error: Something went wrong, could not find user.
+20230422	20:57:41	7dd8e2c5-bef4-4f9c-9d74-d1af98a8369a	Error: Something went wrong, could not find user.
+20230422	20:57:41	1fbc6673-2a61-4b29-8be5-5d38b5232487	Error: Something went wrong, could not find user.
+20230422	20:57:50	128a77b8-f382-4c5d-8a7b-13144589e24c	Error: Something went wrong, could not find user.
+20230422	20:57:50	65a153ce-5d6d-444c-9e77-d6d074400572	Error: Something went wrong, could not find user.
+20230422	20:58:25	4aabc747-6d56-423e-9179-f218ab02fe13	Error: Something went wrong, could not find user.
+20230422	21:01:49	878b6152-38bc-4e9a-9f20-d11596253c07	Error: Cookie has expired, please log in
+20230422	21:09:06	c5049230-d678-4254-a153-3e93f6817ebf	Error: Could not find ride for provided id.
+20230422	21:09:20	fa6c6dc1-486d-4900-997a-951d2f1d632b	Error: Could not find ride for provided id.
+20230422	21:10:50	f3fbedc2-a542-4c72-83e9-45a12131b343	Error: Something went wrong, could not find user.
+20230422	21:11:13	ef10c45b-6dcf-4fd1-8cb2-fc32cdf50e1d	Error: Something went wrong, could not find user.
+20230422	21:12:51	585cfa67-8b89-4fcd-9c6c-99cdac914b5b	Error: Something went wrong, could not find user.
+20230422	21:14:43	2bb585c0-ff10-4c23-919b-325c99cbe358	Error: Could not find user for provided id.
+20230422	21:15:02	57d1542d-4e38-44dd-ab31-3a74f449bf55	Error: Something went wrong, could not find user.
+20230422	21:17:23	adfc7a4b-e08b-4741-89f1-1cfd1e0f7b83	Error: userID and requestID are required.
+20230422	21:17:32	3de3a338-68ee-4c2c-886d-7e98daec4c68	Error: userID and requestID are required.
+20230422	21:17:36	48b964a2-097b-4f93-86dd-76800b251ded	Error: userID and requestID are required.
+20230422	21:18:22	8544c640-fd77-49a4-bb8f-987c68b664ff	Error: You are not authorized to delete this request.
+20230422	21:18:31	a3e8e5b4-7a9f-481b-bdc1-dac624e3c207	Error: You are not authorized to delete this request.
+20230422	21:18:44	d0035b8f-6c78-4d52-9c8f-8ce0fd1d46eb	Error: You are not authorized to delete this request.
+20230422	21:20:21	156f4c25-0083-4b91-8a3d-0f8c4832841b	Error: You are not authorized to delete this request.
+20230422	21:20:57	bae14fe5-6001-4ef2-98a7-f748d6972c20	Error: Deleting request failed, please try again later.
+20230422	23:33:35	3be250ec-e52f-41a5-bf13-6b27e34414fb	Error: Cookie has expired, please log in

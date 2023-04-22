@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,39 +12,51 @@ import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
 import NewRide from "./pages/NewRide";
 import Rides from "./pages/Rides";
+import Requests from "./pages/Requests";
+import { useAuth } from "./hooks/auth-hook";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { accessToken, login, logout, refresh, userID, isLoggedIn } = useAuth();
 
-  const login = useCallback(() => {
-    setIsLoggedIn(true);
-  }, []);
+  useEffect(() => {
+    if (isLoggedIn) {
+      const tokenRefreshInterval = setInterval(() => {
+        refresh();
+      }, 4 * 60 * 1000);
 
-  const logout = useCallback(() => {
-    setIsLoggedIn(false);
-  }, []);
+      return () => {
+        clearInterval(tokenRefreshInterval);
+      };
+    }
+  }, [isLoggedIn, refresh]);
 
-  const verifiedRoutes = (
-    <Routes>
-      <Route path="/" element={<Rides />} />
-      <Route path="/new" element={<NewRide />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
-  const unverifiedRoutes = (
-    <Routes>
-      <Route path="/" element={<Auth />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
+  let routes;
+
+  if (isLoggedIn) {
+    routes = (
+      <Routes>
+        <Route path="/" element={<Rides />} />
+        <Route path="/new" element={<NewRide />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/requests" element={<Requests />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    );
+  } else {
+    routes = (
+      <Routes>
+        <Route path="/" element={<Auth />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    );
+  }
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, setIsLoggedIn, login, logout}}
+      value={{ isLoggedIn, login, logout, accessToken, userID }}
     >
       <Router>
         <MainNavigation />
-        {isLoggedIn ? verifiedRoutes : unverifiedRoutes}
+        <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
   );

@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import './Map.css';
 
 const Map = (props) => {
   const mapRef = useRef();
@@ -33,8 +32,8 @@ const Map = (props) => {
       );
     };
 
-    if (props.start && props.destination) {
-      geocoder.geocode({ address: props.start }, (results, status) => {
+    if (props.origin && props.destination) {
+      geocoder.geocode({ address: props.origin }, (results, status) => {
         if (status === window.google.maps.GeocoderStatus.OK) {
           const startLatLng = results[0].geometry.location;
           map.setCenter(startLatLng);
@@ -48,7 +47,7 @@ const Map = (props) => {
         }
       });
     }
-  }, [props.start, props.destination]);
+  }, [props.origin, props.destination]);
 
   return (
       <div ref={mapRef} className='map'></div>

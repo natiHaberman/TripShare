@@ -1,54 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import Modal from "../UIElements/Modal";
 import DatePicker from "../UIElements/DatePicker";
 import Card from "../UIElements/Card";
-import Map from "../UIElements/Map";
-import MapInput from "../UIElements/MapInput";
+import { MapContainer } from "../mapElements/MapContainer";
 import ToggleButton from "../UIElements/ToggleButton";
 import { useEffect } from "react";
+import { AuthContext } from "../context/auth-context";
+import { newRide } from "../api/newRide";
 import "./NewRide.css";
 
 const NewRide = (props) => {
-  const ACCOMPANIED_PASSENGER = "Accompanied Passenger";
-  const ACCOMPANIED_DRIVER = "Accompanied Driver";
-  const SOLO_PASSENGER = "Solo Passenger";
-  const SOLO_DRIVER = "Solo Driver";
+  const { userID, accessToken } = useContext(AuthContext);
 
-  const [role, setRole] = useState(SOLO_PASSENGER);
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [routeConfirmed, setRouteConfirmed] = useState(false);
   const [departureTime, setDepartureTime] = useState(new Date());
   const [timeChosen, setTimeChosen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [role, setRole] = useState("passenger");
 
   // when navigating from rides
   const path = useLocation();
   let ride = null;
   useEffect(() => {
-    ride = path?.state;
+    ride = path?.state?.ride;
   }, []);
 
-  useEffect(() => {
-    if (ride?.role === "Passenger") {
-      setRole(ACCOMPANIED_DRIVER);
-      setRouteConfirmed(true);
-    } else if (ride?.role === "Driver") {
-      setRole(ACCOMPANIED_PASSENGER);
-      setRouteConfirmed(true);
-    }
-  }, [ride]);
-
   const toggleRole = () => {
-    setRole(role === SOLO_PASSENGER ? SOLO_DRIVER : SOLO_PASSENGER);
+    setRole(role === "passenger" ? "driver" : "passenger");
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (origin && destination) {
-      setRouteConfirmed(true);
+      try {
+        const response = await newRide(
+          role,
+          userID,
+          origin,
+          destination,
+          departureTime,
+          accessToken
+        );
+        const responseData = await response.json();
+        console.log(responseData);
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
+        setRouteConfirmed(true);
+      } catch (err) {
+        console.log(err);
+      }
     } else {
-      //show error message
+      alert("Please select an origin and destination");
     }
   };
 
@@ -88,56 +93,27 @@ const NewRide = (props) => {
         >
           <p>Are you sure yoo want to cancel your ride?</p>
         </Modal>
+        
         <ToggleButton
           option1="Passenger"
           option2="Driver"
           handleToggle={toggleRole}
         />
-        {routeConfirmed &&
-          (() => {
-            switch (role) {
-              case ACCOMPANIED_DRIVER:
-                return <h4>Leaving in 10 minutes, picking up {ride?.name}</h4>;
-              case ACCOMPANIED_PASSENGER:
-                return (
-                  <h4>
-                    Leaving in 10 minutes, waiting on pick up from {ride?.name}
-                  </h4>
-                );
-              case SOLO_DRIVER:
-                return <h4>Leaving in 10 minutes</h4>;
-              default:
-                return <h4>Waiting...</h4>;
-            }
-          })()}
-        {!routeConfirmed && (
-          <div className="input-container">
-            <MapInput
-              placeholder={"Choose starting point"}
-              value={origin}
-              setValue={setOrigin}
-            />
-            <MapInput
-              placeholder={"Choose destination"}
-              value={destination}
-              setValue={setDestination}
-            />
 
-            {role && (
-              <DatePicker
-                className={`departure-time${
-                  timeChosen ? " departure-time-selected" : ""
-                }`}
-                onChange={(date) => {
-                  setDepartureTime(date);
-                  setTimeChosen(true);
-                }}
-                departureTime={departureTime}
-              />
-            )}
-          </div>
-        )}
-        <Map className="map" start={origin} destination={destination} />
+        <div className="map-container">
+          <MapContainer
+            origin={origin}
+            destination={destination}
+            setOrigin={setOrigin}
+            setDestination={setDestination}
+            onOriginSelected={(origin) => setOrigin(origin)}
+            onDestinationSelected={(destination) => setDestination(destination)}
+            departureTime={departureTime}
+            setDepartureTime={setDepartureTime}
+            timeChosen={timeChosen}
+            setTimeChosen={setTimeChosen}
+          />
+        </div>
         <div className="button-container">
           {routeConfirmed ? (
             <button
