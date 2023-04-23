@@ -29,6 +29,7 @@ const handleNewUser = async (req, res, next) => {
       rating: 0,
       requests: [],
       reviews: [],
+      ride: null,
       refreshToken: "",
     });
 

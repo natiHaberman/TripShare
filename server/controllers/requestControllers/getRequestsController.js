@@ -10,8 +10,7 @@ const handleGetRequests = async (req, res, next) => {
   }
   let user;
   try {
-    user = await User.findById(userID);
-    console.log(user);
+    user = await User.findById(userID).populate("requests");
   } catch (err) {
     const error = new HttpError(
       "Something went wrong, could not find user.",
@@ -23,23 +22,9 @@ const handleGetRequests = async (req, res, next) => {
     const error = new HttpError("Could not find user for provided id.", 404);
     return next(error);
   }
-  let requests;
-  try {
-    recievedRequests = await Request.find({ recipient: userID });
-    sentRequests = await Request.find({ sender: userID });
-    requests = [...recievedRequests, ...sentRequests];
-  } catch (err) {
-    const error = new HttpError(
-      "Getting requests failed, please try again later.",
-      500
-    );
-    return next(error);
-  }
-  res
-    .status(200)
-    .json({
-      requests: requests.map((request) => request.toObject({ getters: true })),
-    });
+  const requests = user.requests;
+  res.json({
+    requests: requests.map((request) => request.toObject({ getters: true })),  });
 };
 
 module.exports = { handleGetRequests };

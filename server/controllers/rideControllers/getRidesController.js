@@ -3,7 +3,6 @@ const HttpError = require("../../models/http-error");
 
 const handleGetRides = async (req, res, next) => {
   const type = req.params.type;
-
   let rides;
   try {
     rides = await Ride.find({ type: type });

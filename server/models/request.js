@@ -7,6 +7,7 @@ const requestSchema = new Schema({
   recipient: { type: mongoose.Types.ObjectId, required: true, ref: "User" },
   time: { type: Date, required: true },
   ride: { type: mongoose.Types.ObjectId, required: true, ref: "Ride" },
+  type: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Request", requestSchema);

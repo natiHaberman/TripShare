@@ -264,3 +264,35 @@
 20230422	21:20:21	156f4c25-0083-4b91-8a3d-0f8c4832841b	Error: You are not authorized to delete this request.
 20230422	21:20:57	bae14fe5-6001-4ef2-98a7-f748d6972c20	Error: Deleting request failed, please try again later.
 20230422	23:33:35	3be250ec-e52f-41a5-bf13-6b27e34414fb	Error: Cookie has expired, please log in
+20230423	13:04:16	8c29c39b-f46f-432c-8e2e-5c6dd7f1ddc2	SyntaxError: Unexpected token } in JSON at position 61
+20230423	13:04:20	09b394b1-650c-43b2-9f4c-3280131c3a58	Error: Username, email and password are required.
+20230423	13:04:27	9b617c9c-4fc8-4eeb-925e-9d2e19f0adad	Error: Username, email and password are required.
+20230423	13:04:32	06ead104-bfad-41fd-bd71-019bd815e97c	Error: Username, email and password are required.
+20230423	13:05:27	1a478574-e0a2-440c-92bb-67c87e32adce	Error: Please log in.
+20230423	13:06:10	61c3d71b-325c-4443-9b63-2305091f0861	Error: Username and password are required.
+20230423	13:06:16	ce7587c0-1f9e-4f0e-903e-db97e1c4ec4d	Error: Incorrect email or password
+20230423	13:06:27	df092377-7037-41a4-a86c-cdb394c7a643	Error: No user exists with that email.
+20230423	13:07:11	405873a4-d68a-4bc1-aeed-327efbbdb7bc	Error: Please log in.
+20230423	13:12:18	b200a372-e84f-4cc4-96b3-018d7777af9f	Error: Something went wrong, could not find user.
+20230423	13:18:25	34cf3b1a-c1d5-4eb0-b16e-49540c2dc60e	Error: role, userID, origin, destination and departure time are required.
+20230423	13:18:33	3470a191-3ac5-48d9-896b-5a3495076ae8	Error: Something went wrong, could not find user.
+20230423	13:20:41	b32e22fa-ae1f-4b27-a8af-2f566894d3ce	Error: Please log in.
+20230423	13:23:27	4b168e6c-5b7d-4174-b302-8e8778eec1ce	Error: Sending request failed, please try again later.
+20230423	13:25:11	01667779-f716-4984-b271-b0a7d8cdca7c	Error: Sending request failed, please try again later.
+20230423	13:32:35	da54d096-1e6f-4609-93f6-cecbd089ac8b	Error: You cannot send a request to yourself.
+20230423	13:35:00	573801f0-60cf-4d3b-a03c-41dd043521b3	Error: Please log in.
+20230423	13:44:37	153685e4-6222-4993-a09d-e41b8c1160fa	Error: You are not authorized to accept this request.
+20230423	13:44:49	0c072c18-2af1-462d-a9f2-6f1ed306a9e7	Error: Something went wrong, could not accept request.
+20230423	13:48:52	41841b9f-cd4f-4799-ab1b-8bba18c21f94	Error: Ride is unavailable.
+20230423	13:49:31	40bb6c2e-51ff-4b0b-866d-a841b1b3ae87	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230423	13:51:14	1c910709-1142-47a7-a1e5-e7781451d86a	Error: Could not find user for provided id.
+20230423	13:55:00	3ced5455-2594-478a-8446-2cce0e1bf914	Error: You cannot send a request to yourself.
+20230423	13:55:54	31cd7e5d-d32b-43dc-ab66-130cb6471397	Error: Something went wrong, could not find sender or recipient.
+20230423	13:58:22	cfcaee91-bd20-432f-b791-89d4dd6d00ac	Error: Something went wrong, could not find user.
+20230423	14:00:17	8499f6ed-0849-48ad-872d-87b7a2fff288	Error: Please log in.
+20230423	14:00:27	fd4f142a-d59e-4291-a6b1-0debd032afd1	Error: You are not authorized to accept this request.
+20230423	14:07:02	598bd6c7-ddb6-4b4f-b5f6-d81d77adab6a	Error: Please log in.
+20230423	14:09:38	97c56cec-dc8b-43b1-b475-a40e2f31698d	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230423	14:11:49	b8df42c5-cfca-4758-add2-821c5e4a9c54	Error: Please log in.
+20230423	14:17:34	0f29e12c-29cd-483e-8490-3176f377377d	Error: Completing ride failed, please try again later.
+20230423	14:20:39	e002d447-6f20-46d7-bcdc-6dc2bfbf8e3b	Error: Ride is already completed.

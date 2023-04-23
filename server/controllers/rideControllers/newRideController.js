@@ -24,10 +24,13 @@ const handleNewRide = async (req, res, next) => {
     const error = new HttpError("Could not find user for provided id.", 404);
     return next(error);
   }
+  if (user.ride){
+    const error = new HttpError("You already have a ride. Cancel it first if you wish to create a new one", 422);
+    return next(error);
+  }
   try {
     const { distance, duration } = await getDistanceMatrix(origin, destination);
     console.log(distance.text, duration.text);
-
     if (role === "driver") {
       await Ride.create({
         type: "pending",

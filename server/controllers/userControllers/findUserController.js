@@ -10,8 +10,8 @@ const handleFindUser = async (req, res, next) => {
   }
   let user;
   try {
-    user = await User.findById(userID);
-  } catch (err) {
+    user = await User.findById(userID).select("-email -password");
+  } catch {
     const error = new HttpError(
       "Something went wrong, could not find user.",
       500

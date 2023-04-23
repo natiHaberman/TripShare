@@ -27,19 +27,16 @@ app.use('/user/auth', require('./routes/userRoutes/auth'));
 app.use('/user/refresh', require('./routes/userRoutes/refresh'));
 app.use('/user/logout', require('./routes/userRoutes/logout'));
 
-app.use('/rides/new', require('./routes/rideRoutes/addRide'));
-app.use('/rides/join', require('./routes/rideRoutes/joinRide'));
-
-
+app.use('/rides/new', require('./routes/rideRoutes/newRide'));
 app.use('/user/find', require('./routes/userRoutes/findUser'));
 
 app.use('/rides/all', require('./routes/rideRoutes/getRides'));
-app.use('/rides/delete', require('./routes/rideRoutes/deleteRide'));
+app.use('/rides/cancel', require('./routes/rideRoutes/cancelRide'));
 app.use('/rides/complete', require('./routes/rideRoutes/completeRide'));
 
 app.use('/requests/index', require('./routes/requestRoutes/getRequests'));
 app.use('/requests/new', require('./routes/requestRoutes/sendRequest'));
-app.use('/requests/delete', require('./routes/requestRoutes/deleteRequest'));
+app.use('/requests/cancel', require('./routes/requestRoutes/cancelRequest'));
 app.use('/requests/accept', require('./routes/requestRoutes/acceptRequest'));
 
 app.use(verifyJWT);
