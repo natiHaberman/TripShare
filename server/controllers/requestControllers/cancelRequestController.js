@@ -39,7 +39,7 @@ const handleCancelRequest = async (req, res, next) => {
   }
   if (
     request.sender.toString() !== userID &&
-    request.receiver.toString() !== userID
+    request.recipient.toString() !== userID
   ) {
     const error = new HttpError(
       "You are not authorized to cancel this request.",

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import Card from "../UIElements/Card";
 import Input from "../UIElements/Input";
+import LoadingSpinner from "../UIElements/LoadingSpinner";
 import { AuthContext } from "../context/auth-context";
 import "./Auth.css";
 
@@ -8,27 +9,50 @@ function Auth() {
   const EMAIL_REQUIRMENT = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const PASSWORD_REQUIRMENT =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+  const USERNAME_REQUIRMENT = /^(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const EMAIL_ERROR_MESSAGE = "Please enter a valid email address";
+  const PASSWORD_ERROR_MESSAGE =
+    "Password must contain at least one lowercase and upercase letter, one number, and be at least 8 characters long";
+  const CONFIRM_PASSWORD_ERROR_MESSAGE = "Passwords do not match";
+  const USERNAME_ERROR_MESSAGE =
+    "Username must contain at least one lowercase letter, one number, and be at least 8 characters long";
+
   const [hasAccount, setHasAccount] = useState(true);
   const [passwordValue, setPasswordValue] = useState("");
-  const [showErrorMsg, setShowErrorMsg] = useState(false);
   const [emailValue, setEmailValue] = useState("");
+  const [username, setUsername] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [validity, setValidity] = useState({
     email: false,
     password: false,
     confirmPassword: false,
   });
-  const { login } = useContext(AuthContext);
+  const { login, register } = useContext(AuthContext);
 
   const toggleHasAccount = () => {
     setHasAccount((prevHasAccount) => !prevHasAccount);
-    setShowErrorMsg(false);
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (allFieldsValid()) {
-      await login(emailValue, passwordValue);
+      setIsLoading(true);
+      if (hasAccount) {
+        try {
+          await login(emailValue, passwordValue);
+        } catch (err) {
+          alert(err);
+        }
+      } else {
+        try {
+          await register(emailValue, passwordValue, username);
+        } catch (err) {
+          alert(err);
+        }
+      }
+      setIsLoading(false);
     } else {
-      setShowErrorMsg(true);
+      alert("Please fill out all fields correctly");
     }
   };
 
@@ -39,12 +63,17 @@ function Auth() {
     if (hasAccount) {
       return validity.email && validity.password;
     } else {
-      return validity.email && validity.password && validity.confirmPassword;
+      return (
+        validity.email &&
+        validity.password &&
+        validity.confirmPassword &&
+        validity.username
+      );
     }
   };
-
   return (
     <div className="center">
+      {isLoading && <LoadingSpinner asOverlay />}
       <Card>
         <div className="auth-container">
           <div className="header-container">
@@ -55,7 +84,7 @@ function Auth() {
           </div>
           <form className="input-container" onSubmit={handleSubmit}>
             <Input
-              errorMsg={"Please enter a valid email address"}
+              errorMsg={EMAIL_ERROR_MESSAGE}
               condition={EMAIL_REQUIRMENT}
               placeholder={"Email"}
               onChange={(isValid, enteredValue) => {
@@ -63,9 +92,20 @@ function Auth() {
                 setEmailValue(enteredValue);
               }}
             />
+            {!hasAccount && (
+              <Input
+                errorMsg={USERNAME_ERROR_MESSAGE}
+                condition={USERNAME_REQUIRMENT}
+                placeholder={"Username"}
+                onChange={(isValid, enteredValue) => {
+                  handleValidationChange("username", isValid);
+                  setUsername(enteredValue);
+                }}
+              />
+            )}
             <Input
               type="password"
-              errorMsg={"Please enter a valid password"}
+              errorMsg={PASSWORD_ERROR_MESSAGE}
               condition={PASSWORD_REQUIRMENT}
               placeholder={"Password"}
               onChange={(isValid, enteredValue) => {
@@ -76,7 +116,7 @@ function Auth() {
             {!hasAccount && (
               <Input
                 type="password"
-                errorMsg={"Must match password"}
+                errorMsg={CONFIRM_PASSWORD_ERROR_MESSAGE}
                 condition={(enteredValue) => enteredValue === passwordValue}
                 placeholder={"Confirm Password"}
                 onChange={(isValid) =>
@@ -84,12 +124,10 @@ function Auth() {
                 }
               />
             )}
+
             <button className="submit-button" type="submit">
               {hasAccount ? "Log in" : "Sign up"}
             </button>
-            {showErrorMsg && (
-              <p className="error-msg">Please fill out all fields correctly</p>
-            )}
           </form>
 
           <div className="toggle-mode">

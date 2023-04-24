@@ -1,41 +1,36 @@
 import React, { useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
-import Modal from "../UIElements/Modal";
-import DatePicker from "../UIElements/DatePicker";
 import Card from "../UIElements/Card";
+import LoadingSpinner from "../UIElements/LoadingSpinner";
 import { MapContainer } from "../mapElements/MapContainer";
+import { withMapLoader } from "../mapElements/withMapLoader";
 import ToggleButton from "../UIElements/ToggleButton";
-import { useEffect } from "react";
 import { AuthContext } from "../context/auth-context";
 import { newRide } from "../api/newRide";
+import { useNavigate } from "react-router-dom";
 import "./NewRide.css";
 
 const NewRide = (props) => {
+  const navigate = useNavigate();
   const { userID, accessToken } = useContext(AuthContext);
-
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
-  const [routeConfirmed, setRouteConfirmed] = useState(false);
   const [departureTime, setDepartureTime] = useState(new Date());
   const [timeChosen, setTimeChosen] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [role, setRole] = useState("passenger");
-
-  // when navigating from rides
-  const path = useLocation();
-  let ride = null;
-  useEffect(() => {
-    ride = path?.state?.ride;
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
+  const MapContainerWithLoader = withMapLoader(MapContainer);
 
   const toggleRole = () => {
     setRole(role === "passenger" ? "driver" : "passenger");
   };
 
-  const handleConfirm = async () => {
+  const handleConfirm = async (event) => {
+    //prevent default form submission
+    event.preventDefault();
     if (origin && destination) {
+      setIsLoading(true);
       try {
-        const response = await newRide(
+        await newRide(
           role,
           userID,
           origin,
@@ -43,65 +38,31 @@ const NewRide = (props) => {
           departureTime,
           accessToken
         );
-        const responseData = await response.json();
-        console.log(responseData);
-        if (!response.ok) {
-          throw new Error(responseData.message);
-        }
-        setRouteConfirmed(true);
+        setIsLoading(false);
+        alert("Ride created!");
+        navigate("/ongoing");
       } catch (err) {
-        console.log(err);
+        setIsLoading(false);
+        alert(err.message);
       }
     } else {
       alert("Please select an origin and destination");
     }
   };
-
-  const handleCancel = () => {
-    setRouteConfirmed(false);
-    setOrigin("");
-    setDestination("");
-    setTimeChosen(false);
-  };
-
   return (
     <div className="center">
-      <Card>
-        <Modal
-          show={showModal}
-          onCancel={() => setShowModal(false)}
-          header="Cancel Ride"
-          footer={
-            <div className="modal-options">
-              <button
-                className="modal-confirm-button"
-                onClick={() => {
-                  setShowModal(false);
-                  handleCancel();
-                }}
-              >
-                Contine
-              </button>
-              <button
-                className="modal-cancel-button"
-                onClick={() => setShowModal(false)}
-              >
-                Cancel
-              </button>
-            </div>
-          }
-        >
-          <p>Are you sure yoo want to cancel your ride?</p>
-        </Modal>
-        
+      {isLoading && <LoadingSpinner asOverlay />}
+      <Card className="ride-container">
         <ToggleButton
           option1="Passenger"
           option2="Driver"
           handleToggle={toggleRole}
         />
-
-        <div className="map-container">
-          <MapContainer
+        <form
+          className="map-container"
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <MapContainerWithLoader
             origin={origin}
             destination={destination}
             setOrigin={setOrigin}
@@ -113,21 +74,15 @@ const NewRide = (props) => {
             timeChosen={timeChosen}
             setTimeChosen={setTimeChosen}
           />
-        </div>
-        <div className="button-container">
-          {routeConfirmed ? (
+          <div className="button-container">
             <button
-              className="cancel-button"
-              onClick={() => setShowModal(true)}
+              className="confirm-button"
+              onClick={(event) => handleConfirm(event)}
             >
-              Cancel
-            </button>
-          ) : (
-            <button className="confirm-button" onClick={handleConfirm}>
               Confirm
             </button>
-          )}
-        </div>
+          </div>
+        </form>
       </Card>
     </div>
   );

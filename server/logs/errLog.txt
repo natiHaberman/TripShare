@@ -296,3 +296,258 @@
 20230423	14:11:49	b8df42c5-cfca-4758-add2-821c5e4a9c54	Error: Please log in.
 20230423	14:17:34	0f29e12c-29cd-483e-8490-3176f377377d	Error: Completing ride failed, please try again later.
 20230423	14:20:39	e002d447-6f20-46d7-bcdc-6dc2bfbf8e3b	Error: Ride is already completed.
+20230423	17:49:19	b80ee703-eba7-4c69-b0e6-49c5b000c7a6	Error: Cookie has expired, please log in
+20230423	17:57:44	30911073-1fe4-467b-a7c3-06ed58d7b204	Error: role, userID, origin, destination and departure time are required.
+20230423	17:57:44	9bfd0865-8cbd-495a-afd3-b71b6e1a94da	Error: Something went wrong, could not find user.
+20230423	17:57:44	6ad005d0-fb24-4a72-ac10-7212c6a11fde	Error: Something went wrong, could not find user.
+20230423	17:57:44	e0da329a-748c-46a1-8e1c-33fc4426aa57	Error: Something went wrong, could not find user.
+20230423	17:57:44	22a704d5-cd63-447f-b1b8-fb379b6d7aa8	Error: Something went wrong, could not find user.
+20230423	18:18:43	65e3da55-53cf-432a-864f-1f377d5e55b3	Error: Cookie has expired, please log in
+20230423	18:39:23	5b407d27-c899-429c-a2ea-1420c8311979	Error: Something went wrong, could not find user.
+20230423	18:39:23	9016f365-712e-4dc9-a0ee-5771bf599ddf	Error: Something went wrong, could not find user.
+20230423	18:39:24	b5e648c8-e9a1-4ed5-a7f7-bdbf48659f2c	Error: Something went wrong, could not find user.
+20230423	18:39:24	14fcdc88-81ab-4be8-9faf-f3d5f92cb9a0	Error: Something went wrong, could not find user.
+20230423	18:39:48	604b6fec-4903-4e7d-99c0-396027dd1f27	Error: Something went wrong, could not find user.
+20230423	18:39:49	4bdb6f00-6d61-4648-a6fc-2a5f13019155	Error: Something went wrong, could not find user.
+20230423	18:39:52	2849488e-a225-497d-93bc-cb1b2ee12875	Error: Something went wrong, could not find user.
+20230423	18:39:52	b724afdb-5505-4edc-a56f-322ac0014eda	Error: Something went wrong, could not find user.
+20230423	18:39:52	438266e7-c05d-4974-88ca-24198990e8f6	Error: Something went wrong, could not find user.
+20230423	18:39:52	8fa5e3d2-5709-414e-8ab7-0561b7b02937	Error: Something went wrong, could not find user.
+20230423	19:00:09	b82f8814-cd28-4817-a94f-4558852f33b5	Error: Something went wrong, could not find user.
+20230423	19:00:09	6ffc0b76-db7e-4fd1-bfe1-619953df5444	Error: Something went wrong, could not find user.
+20230423	19:00:09	8570e3af-1be4-4ebf-b94d-d31d63c7f4fb	Error: Something went wrong, could not find user.
+20230423	19:00:09	80d90c92-5dd3-4fce-82fe-a40d05dc5d90	Error: Something went wrong, could not find user.
+20230423	19:10:57	f34f17aa-1265-45ff-b189-c247400a2f83	Error: Could not find this route.
+20230423	19:17:21	75c0a7e4-cbcb-4d4e-b762-c70d52fe8142	Error: Something went wrong, could not find user.
+20230423	19:17:21	0dd36139-f37b-4816-82b3-b3f1e543722d	Error: Something went wrong, could not find user.
+20230423	19:17:21	b505c053-6ed4-4f5f-a2e4-1880375bc37b	Error: Something went wrong, could not find user.
+20230423	19:17:21	c42837ac-6e9e-4182-8cdb-8e48095d4dee	Error: Something went wrong, could not find user.
+20230423	19:17:27	6947366f-2fe6-4e3a-b16a-b2cbadc1264a	Error: rideID and userID are required.
+20230423	19:17:27	e3f01e2f-23db-4cd0-bafd-eb534352f8dc	Error: Something went wrong, could not find user.
+20230423	19:17:27	30b3b875-4e18-4707-9fb7-0973b515b9ec	Error: Something went wrong, could not find user.
+20230423	19:17:27	ec5c1d33-39ee-4066-92e2-52ac80422321	Error: Something went wrong, could not find user.
+20230423	19:17:27	f4eb1222-404f-49cc-b6d9-9ea702be4292	Error: Something went wrong, could not find user.
+20230423	19:17:46	e7512142-54e3-484b-911c-67a7c745affe	Error: You cannot send a request to yourself.
+20230423	19:47:50	a7c89bd7-d920-4df9-8adc-84bdc77c8a3a	Error: Could not find ride for provided id.
+20230423	19:48:25	4077a466-314d-4e3e-a8c0-c9630509d232	Error: You cannot send a request to yourself.
+20230423	19:49:03	3be0da39-2116-450d-ad03-3f69424d840e	Error: Could not find sender or recipent for provided id.
+20230423	19:49:44	43686ec9-6f48-410f-95fb-ae3e3f733da9	Error: You cannot send a request to yourself.
+20230423	19:50:45	6325d609-03a6-4648-b7b9-33ccbc045e25	Error: Could not find ride for provided id.
+20230423	19:52:03	ce0b1506-e15e-4294-a395-e905421a3dd0	Error: No user exists with that email.
+20230423	19:52:06	b867d0c2-0a40-4fda-87d7-7e47dc42aa97	Error: No user exists with that email.
+20230423	19:52:11	948310a1-6519-4160-9483-db381e2ea30b	Error: No user exists with that email.
+20230423	19:52:16	a419e3ba-e580-4f28-ba03-3e56700dd929	Error: No user exists with that email.
+20230423	19:52:41	4b3e497f-6b26-461d-b82e-3c3a6629fbf5	Error: No user exists with that email.
+20230423	19:56:08	b8e8e283-12dc-409e-93ce-d15804bd84fe	Error: Could not find sender or recipent for provided id.
+20230423	20:25:29	9ac3adfb-496f-4831-a50f-e12a54173283	Error: Something went wrong, could not find user.
+20230423	20:25:35	fcf14597-72fd-462d-93a6-8cd233dd1e10	Error: Something went wrong, could not find user.
+20230423	20:25:35	18f7c900-6d97-4d6c-ae1e-b0743f01ea87	Error: Something went wrong, could not find user.
+20230423	20:26:41	26d55549-2415-4430-9dd5-352adb28908b	Error: Something went wrong, could not find user.
+20230423	20:26:41	8e5f45f0-3904-4415-9664-594a9403b77e	Error: Something went wrong, could not find user.
+20230423	20:26:41	752f0063-f1ff-45d1-92e9-3826823fc604	Error: Something went wrong, could not find user.
+20230423	20:26:41	6a484e19-3b6a-4a8f-8f99-044c6523cf68	Error: Something went wrong, could not find user.
+20230423	20:26:52	e6f268cf-5190-4d71-9c36-6b27438a22af	Error: Something went wrong, could not find user.
+20230423	20:26:52	9816199c-92f0-428e-8c87-e78e9fc78a0e	Error: Something went wrong, could not find user.
+20230423	20:27:08	b324a8ab-6eee-485f-820c-fe7591561c92	Error: Something went wrong, could not find user.
+20230423	20:27:08	5ed299d9-3e44-4cb6-9fd6-0b27e5f53b94	Error: Something went wrong, could not find user.
+20230423	20:27:08	17e91698-8863-4895-be59-076c3ca188ce	Error: Something went wrong, could not find user.
+20230423	20:27:08	d98f11ee-bf6f-4101-86fd-c7eb9033e1ce	Error: Something went wrong, could not find user.
+20230423	20:30:49	27be79dd-022b-4c4f-978b-9574b58353a5	Error: Cookie has expired, please log in
+20230423	20:36:35	e578b032-cef8-4206-a3ef-030973fcaa21	Error: Something went wrong, could not find user.
+20230423	20:36:35	3a357c87-1f05-4146-a68b-d88ef995b470	Error: Something went wrong, could not find user.
+20230423	20:36:35	740e33f7-9ca3-4c8f-aae4-9384f47774a1	Error: Something went wrong, could not find user.
+20230423	20:36:35	31bec264-9c7f-4450-aa25-98cf45cbe4b8	Error: Something went wrong, could not find user.
+20230423	20:36:35	88112130-87f9-4f60-a4e4-bb2cb5bc5f9e	Error: Something went wrong, could not find user.
+20230423	20:36:35	5a3c2021-4dd8-4ffa-8d64-5a779dfe513f	Error: Something went wrong, could not find user.
+20230423	20:36:35	3e1ba974-0f83-4f9f-a1ed-ef0217d0cadf	Error: Something went wrong, could not find user.
+20230423	20:36:35	37cdc16d-4c7d-4629-bbc3-fd4e4da5ac88	Error: Something went wrong, could not find user.
+20230423	20:36:49	aa83f514-1cbb-428b-8afd-fb4fad992113	Error: userID and requestID are required.
+20230424	12:40:59	2dcc08f0-b962-48c8-b520-c70d1def77ef	Error: Cookie has expired, please log in
+20230424	13:24:34	e305903c-d360-42dc-82d5-786a8ede1029	Error: Cookie has expired, please log in
+20230424	13:59:51	44086419-1c33-4702-8ae6-5ec6fb7165c0	Error: Something went wrong, could not find user.
+20230424	13:59:59	063d8801-99c2-4b80-98d4-a35bf67d3f21	Error: Something went wrong, could not find user.
+20230424	14:00:00	a8499e2e-945f-41a7-8206-1d7921d89f79	Error: Something went wrong, could not find user.
+20230424	14:01:48	40667f6d-41cb-4293-94f4-82546af7e5ad	Error: Something went wrong, could not find user.
+20230424	14:01:53	9b141624-ae2b-455a-b6b4-9e15a3363a51	Error: Something went wrong, could not find user.
+20230424	14:01:53	cd4d5d1e-014d-4d7b-979f-f5452adea0ee	Error: Something went wrong, could not find user.
+20230424	14:05:40	7e0ab58f-1afa-415f-97ff-feecce60b418	Error: Something went wrong, could not find user.
+20230424	14:05:40	a864a422-be0f-41f9-a48c-d0fe8a1cdc07	Error: Something went wrong, could not find user.
+20230424	14:05:40	a5c9b055-753f-4ad4-8a91-bc9946163d68	Error: Something went wrong, could not find user.
+20230424	14:05:44	66ac67b7-8d36-40d3-928e-4930846c4825	Error: Something went wrong, could not find user.
+20230424	14:05:44	0d514c6b-8605-43ab-a253-96880eacd5dc	Error: Something went wrong, could not find user.
+20230424	14:05:44	6f5507df-a8c0-4272-a1c5-e55b83ca7942	Error: Something went wrong, could not find user.
+20230424	14:05:44	7e620a75-0570-4c38-bff9-1e84e6a12881	Error: Something went wrong, could not find user.
+20230424	14:05:44	e7a37065-71ce-4000-8909-6e05f93eb24d	Error: Something went wrong, could not find user.
+20230424	14:05:44	9b9b6c04-228a-4103-a69c-0585aa54e40d	Error: Something went wrong, could not find user.
+20230424	14:06:15	48b9cb0d-f48c-4562-bede-f3823c057dc8	Error: Something went wrong, could not find user.
+20230424	14:06:15	16209fd8-84f6-4f2c-9c56-485f181fbb2e	Error: Something went wrong, could not find user.
+20230424	14:06:15	583955ab-e4ab-403a-b4d9-d35e4cc6ab70	Error: Something went wrong, could not find user.
+20230424	14:06:19	56485eaf-494c-4949-aea2-b7fb6aef5938	Error: Something went wrong, could not find user.
+20230424	14:06:19	cd22a484-4772-47b6-82cf-dbc60ff63623	Error: Something went wrong, could not find user.
+20230424	14:06:19	d89ed917-2953-40ee-95f4-861b629995fa	Error: Something went wrong, could not find user.
+20230424	14:06:19	7da4ccf2-999a-4603-84c9-17772aa51093	Error: Something went wrong, could not find user.
+20230424	14:06:19	a612c123-50ba-40b6-bb1f-8eeef23939ce	Error: Something went wrong, could not find user.
+20230424	14:06:19	2de159ed-0345-4c99-96ff-b50532ec39ae	Error: Something went wrong, could not find user.
+20230424	14:07:00	95a4c333-37d6-49c6-a83a-b3075c416fbf	Error: Something went wrong, could not find user.
+20230424	14:07:00	57d1e3eb-388c-4de4-b87a-4394f131dc5a	Error: Something went wrong, could not find user.
+20230424	14:07:00	aeee329f-8ac3-4812-afab-f71dfc6e9bda	Error: Something went wrong, could not find user.
+20230424	14:07:05	40bde389-4058-42b2-8978-d31d31f44dfc	Error: Something went wrong, could not find user.
+20230424	14:07:05	505ce483-377b-4e1e-89c3-602174baaa09	Error: Something went wrong, could not find user.
+20230424	14:07:05	96099947-e85c-485b-856e-5aca7c0425b7	Error: Something went wrong, could not find user.
+20230424	14:07:05	e00b2a4f-182a-4f1d-afcd-f243f48ebe6a	Error: Something went wrong, could not find user.
+20230424	14:07:05	681a76b3-e3ea-483a-9b10-ca725c3d6565	Error: Something went wrong, could not find user.
+20230424	14:07:05	483361e6-1873-4ce0-ba26-1231b040fad5	Error: Something went wrong, could not find user.
+20230424	14:09:55	af2c7a15-5423-4fca-86ef-ff0af6c8868d	Error: Something went wrong, could not find user.
+20230424	14:09:55	eb9901a4-a591-4a7e-abf2-def7fc6faa85	Error: Something went wrong, could not find user.
+20230424	14:09:55	c4b061cb-9bc5-497c-98a8-5580b1506cff	Error: Something went wrong, could not find user.
+20230424	14:09:55	0e6ae143-28d3-4e15-af85-a2f3db1e463a	Error: Something went wrong, could not find user.
+20230424	14:09:55	677595e4-6a27-4538-a5ad-3de759574a84	Error: Something went wrong, could not find user.
+20230424	14:09:55	bccb0b6c-ca39-47be-a329-9814d11ad792	Error: Something went wrong, could not find user.
+20230424	14:11:10	f87e7fa8-266a-4edd-8140-0a2124e554d5	Error: Something went wrong, could not find user.
+20230424	14:11:10	fef27aea-1d15-4312-a3dd-4542d61a6e27	Error: Something went wrong, could not find user.
+20230424	14:11:11	c3b354b7-4365-4ba7-9a2a-99b590d6b4a3	Error: Something went wrong, could not find user.
+20230424	14:11:15	f00ae3ee-7472-48f7-a6fe-03d4d1f10bb2	Error: Something went wrong, could not find user.
+20230424	14:11:15	9ea82ebd-9def-436e-b565-fbc1a9cd9e5b	Error: Something went wrong, could not find user.
+20230424	14:11:15	eb0fd799-2288-4b7c-829c-4975495045bb	Error: Something went wrong, could not find user.
+20230424	14:11:15	8cebd97d-5d75-414a-9353-800d567828de	Error: Something went wrong, could not find user.
+20230424	14:11:15	76bbd21c-b287-49a9-b7a7-f4542e86f24f	Error: Something went wrong, could not find user.
+20230424	14:11:15	95e83a19-69fd-47c7-805f-ed3aaf94f2d4	Error: Something went wrong, could not find user.
+20230424	14:15:13	881afc10-3e1d-4df2-9b79-452120fa7853	Error: Cookie has expired, please log in
+20230424	14:42:30	0c324986-2c80-4686-879f-f420112251fd	Error: Cookie has expired, please log in
+20230424	15:03:32	91749c16-f794-4389-b997-0a1a95ae5350	Error: Cookie has expired, please log in
+20230424	15:55:06	077558d1-4505-4ab2-877d-a4ab1c86cb62	Error: role, userID, origin, destination and departure time are required.
+20230424	15:55:16	9a36f53f-adac-4908-917d-e02d1f7e4e22	Error: Something went wrong, could not find user.
+20230424	15:55:16	e2e915f8-8905-4e37-855a-f9e3ea12afac	Error: Something went wrong, could not find user.
+20230424	15:55:17	5921360e-cdab-4b69-930c-1cb50ab9b705	Error: Something went wrong, could not find user.
+20230424	15:55:17	0be4d3d3-342e-4379-9b53-cbae08a33b8f	Error: Something went wrong, could not find user.
+20230424	15:56:16	9b975aad-d6ba-4c9a-a310-b5244a6dc129	Error: Something went wrong, could not find user.
+20230424	15:56:16	ce407c65-4367-4533-8a88-9464e41178d1	Error: Something went wrong, could not find user.
+20230424	15:56:16	3e3c1dc4-06f8-4069-8a2d-3f02dfa6af84	Error: Something went wrong, could not find user.
+20230424	15:56:16	cb7a3cca-f0a1-4090-91cc-6bd69c86c621	Error: Something went wrong, could not find user.
+20230424	15:56:18	434542fa-7326-45e1-9f65-6217baeebd75	Error: Something went wrong, could not find user.
+20230424	15:56:18	80fb0d18-032d-4c23-a972-febcf21955d0	Error: Something went wrong, could not find user.
+20230424	15:56:18	22057f78-ee9b-4a00-9721-b0557fd257ac	Error: Something went wrong, could not find user.
+20230424	15:56:18	fa4fbc76-cc6f-4950-a939-8b6c73423ef9	Error: Something went wrong, could not find user.
+20230424	15:58:18	5c148453-4299-4508-b74c-a2048199afa4	Error: No user exists with that email.
+20230424	16:02:19	67732e9c-2b81-47b8-9b47-1052caa8aa5a	Error: No user exists with that email.
+20230424	16:02:31	15124ea7-224f-4b89-bb89-9bbaec5128d8	Error: No user exists with that email.
+20230424	16:02:54	7db2703f-1a45-456a-8b42-c327551a564e	Error: No user exists with that email.
+20230424	16:05:24	c995ae40-30df-40f5-aece-31263e34e61c	Error: No user exists with that email.
+20230424	16:06:44	6e8d2366-59e9-41e6-9805-6a3349c27829	Error: No user exists with that email.
+20230424	16:06:45	48c0b771-5911-4c4a-b4fa-231765fcb74b	Error: No user exists with that email.
+20230424	16:07:14	9c895d85-1a7f-4ec6-82c7-d3b7f82125c9	Error: No user exists with that email.
+20230424	16:07:15	7541a5ff-3713-4891-872b-24df0bc1090b	Error: No user exists with that email.
+20230424	16:08:17	8acb7327-d6a1-4490-97e2-725ba4ce5b0e	Error: No user exists with that email.
+20230424	16:08:18	fc64ae0a-7e34-4dfd-9a6a-34a696898fc7	Error: No user exists with that email.
+20230424	16:08:25	91bc6165-8e51-46dc-a567-d6f36cc57605	Error: No user exists with that email.
+20230424	16:10:27	1b3d4857-ff66-435a-b0d6-3bab0424f71c	Error: No user exists with that email.
+20230424	16:10:28	da9657e8-4929-46b5-b399-62eb83bb8098	Error: No user exists with that email.
+20230424	16:10:30	b76fcb35-d139-444c-b10d-ef8f2f7bad71	Error: No user exists with that email.
+20230424	16:11:28	39dea49a-d277-4477-ae3e-e8f50905790e	Error: No user exists with that email.
+20230424	16:13:27	252e8565-e384-48ab-940b-615f0348a60b	Error: No user exists with that email.
+20230424	16:14:24	afb9721c-2ddd-4d7f-9ed1-92d28781b4a1	Error: No user exists with that email.
+20230424	16:21:34	dd64d3de-280b-4fe0-82a2-643ce1e39f6b	Error: Something went wrong, could not find user.
+20230424	16:21:34	4597067b-6c0d-4e2e-a3e7-52026d590f5a	Error: Something went wrong, could not find user.
+20230424	16:21:34	e2775b2f-85e9-4022-9a37-67dcc4bfa7f6	Error: Something went wrong, could not find user.
+20230424	16:21:34	810fd0d3-5032-445b-90d0-e9a975c55a42	Error: Something went wrong, could not find user.
+20230424	16:21:38	a674ddf3-179c-40a1-9e83-166e095afb08	Error: Something went wrong, could not find user.
+20230424	16:21:38	39fbf1bc-004c-472f-a546-7de419571d8c	Error: Something went wrong, could not find user.
+20230424	16:21:38	c9ee348e-4bf3-45b7-a32b-01bb85256875	Error: Something went wrong, could not find user.
+20230424	16:21:38	77c83c2a-8ba3-44f0-b1ca-7b70f74182f0	Error: Something went wrong, could not find user.
+20230424	16:38:52	b5485cf5-66de-4426-87c0-2382a2edef64	Error: Something went wrong, could not find user.
+20230424	16:38:52	e6cb47f5-2c99-4b2e-b86c-46685b171f16	Error: Something went wrong, could not find user.
+20230424	16:38:53	b236aeec-d766-4c07-8f48-1ea0f0b365a2	Error: Something went wrong, could not find user.
+20230424	16:38:53	4466f6a8-f57e-4f65-a18d-faf44f3c57ad	Error: Something went wrong, could not find user.
+20230424	16:38:55	9e929fb3-42d4-4312-95d0-26425ca29154	Error: Something went wrong, could not find user.
+20230424	16:38:55	160608de-3eb6-4c94-99df-39918e6b66d9	Error: Something went wrong, could not find user.
+20230424	16:38:55	63e79d70-0d9d-4e48-a939-54d2a4e836d4	Error: Something went wrong, could not find user.
+20230424	16:38:55	e302319f-874f-45c4-b549-9134aba0d7bf	Error: Something went wrong, could not find user.
+20230424	16:39:07	f8cccf39-178b-4ee6-b708-be029b57cac6	Error: Something went wrong, could not find user.
+20230424	16:39:07	a0a7f3bb-6a72-454a-9779-e02aff49f427	Error: Something went wrong, could not find user.
+20230424	16:39:07	02fa15e9-b8dc-4606-8e07-1aba6f5f8b00	Error: Something went wrong, could not find user.
+20230424	16:39:07	d083f773-4e0b-415e-af16-12230821785d	Error: Something went wrong, could not find user.
+20230424	16:39:12	614277a8-f7fe-4df2-b90e-5fa489d1a404	Error: Something went wrong, could not find user.
+20230424	16:39:12	edb0e21e-05f0-4673-8031-5ef7ec560b68	Error: Something went wrong, could not find user.
+20230424	16:39:12	938c6d85-cc5b-40ad-be8b-9fdb67815928	Error: Something went wrong, could not find user.
+20230424	16:39:12	1eb7cac0-1c00-4f83-9533-6977a06f7694	Error: Something went wrong, could not find user.
+20230424	16:44:59	c8ab6d36-da69-49fc-9bd4-c6dde10a3aa8	Error: Something went wrong, could not find user.
+20230424	16:44:59	0606a594-bc96-4b22-84f6-8eed0705ba50	Error: Something went wrong, could not find user.
+20230424	16:44:59	d4cace59-ce53-46dd-a2cf-d57a4957048f	Error: Something went wrong, could not find user.
+20230424	16:45:00	8ea0443f-03b6-4351-87b4-5c2fdf640040	Error: Something went wrong, could not find user.
+20230424	16:45:08	5a7d6195-e5c3-48b4-a953-0ac3319e8f2b	Error: Something went wrong, could not find user.
+20230424	16:45:08	f8312b01-3b4c-41d7-9c49-78ce9976f661	Error: Something went wrong, could not find user.
+20230424	16:45:09	5be65e83-4961-4f3b-832d-466cbf6a4f5b	Error: Something went wrong, could not find user.
+20230424	16:45:09	08c7dacc-a21e-470b-a4e5-161f2e9e6cc8	Error: Something went wrong, could not find user.
+20230424	16:45:22	43d486a7-3204-414f-a06b-86753c635622	Error: Something went wrong, could not find user.
+20230424	16:45:22	0174cf23-e740-4fa8-b025-119f275bbaf0	Error: Something went wrong, could not find user.
+20230424	16:45:22	cf963ab5-6721-48f7-9bb2-d3caae3b644c	Error: Something went wrong, could not find user.
+20230424	16:45:22	e79e2cf0-b19e-4e51-91b3-c94e094f2ad8	Error: Something went wrong, could not find user.
+20230424	16:45:24	08d2d82f-fce5-4e73-9da8-c88ae3e3e2c5	Error: Something went wrong, could not find user.
+20230424	16:45:24	b82d300e-1b16-497b-a48a-607365fdf6ac	Error: Something went wrong, could not find user.
+20230424	16:45:24	a30fc0a2-3b78-4e56-96f2-c1b5d35b6945	Error: Something went wrong, could not find user.
+20230424	16:45:24	f5eb492b-9ec2-4dae-9eec-43c274acedbe	Error: Something went wrong, could not find user.
+20230424	17:28:30	b3b0f76c-df8d-46a4-81c9-fc0059324794	Error: Cookie has expired, please log in
+20230424	17:45:24	983c2e95-5628-4af4-9642-5bd5a596eaff	Error: rideID and userID are required.
+20230424	17:48:47	257daf0e-0d60-4992-8dd0-667b245d0fc4	Error: rideID and userID are required.
+20230424	17:50:24	eda76df4-547e-46c3-9618-26b4e0646602	Error: rideID and userID are required.
+20230424	17:54:55	c5a0213e-62c5-48ec-b77a-5bc5b7deb3d1	Error: rideID and userID are required.
+20230424	17:55:52	34da6c48-d5d8-4d17-b453-7f5f0a18dd05	Error: rideID and userID are required.
+20230424	17:57:30	6b4bb627-9032-4215-9e2d-f7295be03757	Error: rideID and userID are required.
+20230424	17:58:11	b66edd78-84cd-4d87-8430-91bb0482ed18	Error: rideID and userID are required.
+20230424	18:00:40	72020aae-d7ec-4e07-8318-5336445819de	Error: rideID and userID are required.
+20230424	18:01:14	a19a6c64-a024-41d9-988c-0bc533d38b01	Error: rideID and userID are required.
+20230424	18:06:27	c45ec21a-54a8-483c-b590-8147dde1a14a	Error: rideID and userID are required.
+20230424	18:07:58	e8ca617b-63e1-42f5-8aff-768e43a7eb61	Error: rideID and userID are required.
+20230424	18:08:44	0e174929-87e1-4419-8b95-3324e97e7bcb	Error: rideID and userID are required.
+20230424	18:09:43	ae1995bb-6a40-4687-a9bf-a9adc92d36f4	Error: rideID and userID are required.
+20230424	18:29:33	71305ab2-c3ad-4c03-b76c-a509d8839d73	Error: Cookie has expired, please log in
+20230424	19:40:11	54277dfc-d06a-4c3c-a99a-7a869cd81047	Error: Cookie has expired, please log in
+20230424	19:47:14	a8bc8fbb-88a6-48c6-bccb-026f1734ec4a	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	19:49:39	ceb66d58-cda8-42ab-8378-8bff84918e28	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	19:52:49	6aa494a8-5a0a-4900-9f9b-54eece8ab8f1	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	19:55:11	21120cde-356b-4df7-9d5e-949edbbe4d61	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	19:56:36	dec10e7f-d333-4066-8334-aff967e110be	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	19:59:27	1fdbc658-a1cb-44d7-9798-d6927e8069b0	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	20:03:35	7a7083a7-04ab-4858-9269-aac10d3b7e47	Error: role, userID, origin, destination and departure time are required.
+20230424	20:04:43	785df7d3-bafa-46d8-b9b2-839921c858e2	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	20:05:23	dd090428-cd98-4222-bd45-c688059df647	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	20:06:20	9083bcff-56ee-4194-9d90-96bed02ad5d4	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	20:24:05	08047768-3dfa-453f-9cd5-2ae09398318d	Error: Cookie has expired, please log in
+20230424	20:41:33	9f986310-6a89-401b-93f1-a0bd2ae849d0	Error: role, userID, origin, destination and departure time are required.
+20230424	21:06:50	b9287cc2-f368-4665-9155-076e1211f13d	Error: Something went wrong, could not find user.
+20230424	21:06:50	a7279bca-2e51-4919-b8ad-eb8d5b7a4647	Error: Something went wrong, could not find user.
+20230424	21:06:50	de4c4427-f730-4bd2-8d3d-c469a289c1c9	Error: Something went wrong, could not find user.
+20230424	21:06:50	e612812a-1f14-4a1b-9081-aafba3e41149	Error: Something went wrong, could not find user.
+20230424	21:07:26	63a69997-46bc-45c6-af63-a7f42cfc7bf7	Error: Something went wrong, could not find user.
+20230424	21:07:26	7277c692-5e93-49aa-a44d-36bd8baa43b9	Error: Something went wrong, could not find user.
+20230424	21:08:14	ad716aee-fc08-47bd-b457-dd58aeefb388	Error: Something went wrong, could not find user.
+20230424	21:08:14	e49eb92b-34ee-4e9d-be3e-03c49dab015d	Error: Something went wrong, could not find user.
+20230424	21:16:04	a6323336-e9ed-4029-9172-ca63dccfe207	Error: userID and requestID are required.
+20230424	21:16:48	85371da1-dcea-400b-ba13-195f3723370d	Error: Something went wrong, could not find user.
+20230424	21:16:48	23c2eecc-f0f8-40a4-ae5c-c86b7370f233	Error: Something went wrong, could not find user.
+20230424	21:16:48	a1ff7a8f-c6db-401a-aa81-426f65cc52d8	Error: Something went wrong, could not find user.
+20230424	21:16:48	ba6b02f5-0773-40c7-aa44-15c491e29fbb	Error: Something went wrong, could not find user.
+20230424	21:20:12	f4c9bb66-dcce-4c30-8b8f-25c444671ad8	Error: userID and requestID are required.
+20230424	21:22:00	2127504e-7942-4bb4-ae3f-5d96c346a9d4	Error: userID and requestID are required.
+20230424	21:23:01	65aaeb08-1921-4d78-819d-51f006ad039a	Error: userID and requestID are required.
+20230424	21:24:06	5a5991ce-3a1a-4735-8860-96dd6b34e066	Error: userID and requestID are required.
+20230424	21:24:39	a478691c-8864-45e8-afb6-39337220615f	Error: userID and requestID are required.
+20230424	21:25:09	7ba70391-8a95-4930-ab8b-f2a013abbd75	Error: userID and requestID are required.
+20230424	21:37:07	e9f58ff4-b524-4757-aacb-d0bab6782f6b	Error: Something went wrong, could not find user.
+20230424	21:37:07	9a70fd76-9d7a-4b35-b376-38c0ad244d4f	Error: Something went wrong, could not find user.
+20230424	21:37:08	3b89098c-783f-475c-be69-6209ff0cc487	Error: Something went wrong, could not find user.
+20230424	21:37:08	1a18b268-ac77-41fb-bff1-fde61c7aa994	Error: Something went wrong, could not find user.
+20230424	21:38:20	66f4fb4a-529e-4625-a866-05dd96e42299	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	21:43:37	a529fcad-47d3-4bf4-a112-ef25aa3d25a3	Error: You are already in a ride.
+20230424	21:45:15	24fadc00-7b64-445d-ae98-79e7a4e65f1b	Error: You are already in a ride.
+20230424	21:46:56	d570aca2-e1b4-47be-ba13-7430f03dde92	Error: You are already in a ride.
+20230424	21:48:32	f9a9cb8b-2a95-471d-b1af-7c77db9ad059	Error: userID and requestID are required.
+20230424	21:49:18	ebc9b0d5-379d-4f10-9b45-5930decb9890	Error: userID and requestID are required.
+20230424	21:50:21	15489fb3-d740-40d6-be19-458e48053c28	Error: userID and requestID are required.
+20230424	21:53:04	cf1260f1-9f1e-4252-ae61-d2dd9e1c2e90	Error: rideID and userID are required.
+20230424	21:53:12	f14db528-e4b5-429a-81e4-726656f68a3d	Error: userID and requestID are required.
+20230424	21:53:42	fa37478f-71f8-4186-afea-05ea0aece5bc	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230424	21:53:56	341fa116-9044-4562-8f3e-6c1920b5b091	Error: rideID and userID are required.
+20230424	21:54:23	9c0e52b7-fb52-4f67-8ac4-2a3441011af6	Error: rideID and userID are required.
+20230424	21:54:49	902ab0c2-fda1-4155-965c-0aaa035a7390	Error: rideID and userID are required.
+20230424	21:56:36	5f25b404-580a-4faa-8b1e-f9fd2be3f6ae	Error: rideID and userID are required.

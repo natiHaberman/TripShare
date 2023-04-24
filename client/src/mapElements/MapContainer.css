@@ -23,16 +23,9 @@
 }
 
 .map {
-  width: 80vh;
-  height: 40vh;
+  width: 80%;
+  height: 80%;
+  min-height: 40vh;
   border: 2px solid var(--light-grey);
   
-}
-
-.departure-time {
-  border-color: var(--light-grey);
-  color: var(--placeholder-grey);
-}
-.departure-time-selected {
-  color: black;
 }

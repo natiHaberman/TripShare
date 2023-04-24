@@ -1,57 +1,166 @@
-import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../context/auth-context";
+import React, { useContext } from "react";
 import Stars from "../UIElements/Stars";
 import LoadingSpinner from "../UIElements/LoadingSpinner";
-import { fetchRequests } from "../api/getRequests";
-import Card from "../UIElements/Card";
+import { useRequests } from "../hooks/requests-hook";
+import { acceptRequest } from "../api/acceptRequest";
+import { cancelRequest } from "../api/cancelRequest";
+import { AuthContext } from "../context/auth-context";
+import { useNavigate } from "react-router-dom";
 import "./Requests.css";
 
 const Requests = () => {
+  const {
+    isLoading,
+    ride,
+    pendingRequests,
+    acceptedRequests,
+    canceledRequests,
+  } = useRequests();
+  const navigate = useNavigate();
   const { userID, accessToken } = useContext(AuthContext);
-  const [requests, setRequests] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    (async () => {
-      setIsLoading(true);
-      const newRequests = await fetchRequests(userID, accessToken);
-      setRequests(newRequests);
-      setIsLoading(false);
-    })();
-  }, [userID, accessToken]);
+
+  const handleAcceptRequest = async (requestID, userID, accessToken) => {
+    try {
+      await acceptRequest(requestID, userID, accessToken); 
+      alert("Request accepted");
+    } catch (error) {
+      alert("Error accepting request:", error);
+    }
+  };
+
+  const handleCancelRequest = async (requestID, userID, accessToken) => {
+    try {
+      await cancelRequest(requestID, userID, accessToken); 
+      alert("Request canceled");
+    } catch (error) {
+      alert("Error cancelling request")
+    }
+  };
 
   return (
     <div className="requests-page">
       {isLoading && (
         <div className="center">
-          <LoadingSpinner />
+          <LoadingSpinner asOverlay />
         </div>
       )}
-      {!isLoading && requests?.length > 0 && (
+      {ride?._id && (
+        <div>
+          <h2>Your Ride</h2>
+          <div className="request-item">
+            <div className="request-info">
+              <p>Role: {ride.role}</p>
+              <p>Origin: {ride.origin}</p>
+              <p>Destination: {ride.destination}</p>
+              <p>Duration: {ride.duration}</p>
+              <p>Distance: {ride.distance}</p>
+              <p>Departure Time: {ride.departureTime}</p>
+            </div>
+            <button
+              onClick={() => {
+                navigate("/ongoing");
+              }}
+              className="navigate-button"
+            >
+              Navigate
+            </button>
+          </div>
+        </div>
+      )}
+
+      <h2>Pending Requests</h2>
+      {pendingRequests.length > 0 ? (
         <ul className="requests-list">
-          {requests.map((request, index) => (
+          {pendingRequests.map((request, index) => (
             <li key={index} className="request-item">
               <div className="request-info">
-                {/* Uncomment the following lines after fetching and adding the user data */}
-                {/* <h3>{request.userData.username}</h3>
-                <p>
-                  Rating: <Stars rating={request.userData.rating} />
-                </p>
+                <p>Username: {request.username}</p>
+                <p>Role: {request.role}</p>
                 <p>Origin: {request.origin}</p>
                 <p>Destination: {request.destination}</p>
-                <p>Time: {request.time}</p> */}
-                <h3>{request._id}</h3>
+                <p>
+                  Rating: <Stars rating={request.rating} />
+                </p>
+                <p>Duration: {request.duration}</p>
+                <p>Distance: {request.distance}</p>
+                <p>Departure Time: {request.departureTime}</p>
+              </div>
+              {request.recipient===userID && (<div className="button-container">
+              <button
+                className="confirm-button"
+                onClick={() =>
+                  handleAcceptRequest(request._id, userID, accessToken)
+                }
+              >
+                Accept
+              </button>
+              <button
+                className="cancel-button"
+                onClick={() =>
+                  handleCancelRequest(request._id, userID, accessToken)
+                }
+              >
+                cancel
+              </button>
+              </div>)}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="request-item">
+        <p>No pending requests found.</p>
+        </div>
+      )}
+
+      <h2>Accepted Requests</h2>
+      {acceptedRequests.length > 0 ? (
+        <ul className="requests-list">
+          {acceptedRequests.map((request, index) => (
+            <li key={index} className="request-item">
+              <div className="request-info">
+                <p>Role: {request.role}</p>
+                <p>Origin: {request.origin}</p>
+                <p>Destination: {request.destination}</p>
+                <p>
+                  Rating: <Stars rating={request.rating} />
+                </p>
+                <p>Duration: {request.duration}</p>
+                <p>Distance: {request.distance}</p>
+                <p>Departure Time: {request.departureTime}</p>
               </div>
             </li>
           ))}
         </ul>
+      ) : (
+        <div className="request-item">
+        <p>No accepted requests found.</p>
+        </div>
       )}
-      {!isLoading && (requests?.length === 0 || !requests?.length) && (
-        <Card>
-          <div className="empty-requests">
-            <h3>No requests found.</h3>
-          </div>
-        </Card>
+
+      <h2>Canceled Requests</h2>
+      {canceledRequests.length > 0 ? (
+        <ul className="requests-list">
+          {canceledRequests.map((request, index) => (
+            <li key={index} className="request-item">
+              <div className="request-info">
+                <p>Role: {request.role}</p>
+                <p>Origin: {request.origin}</p>
+                <p>Destination: {request.destination}</p>
+                <p>
+                  Rating: <Stars rating={request.rating} />
+                </p>
+                <p>Duration: {request.duration}</p>
+                <p>Distance: {request.distance}</p>
+                <p>Departure Time: {request.departureTime}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="request-item">
+        <p>No canceled requests found.</p>
+        </div>
       )}
     </div>
   );

@@ -12,7 +12,6 @@ const CustomDatePicker = props => {
     timeIntervals={5}
     timeCaption="Departure Time"
     dateFormat="h:mm aa"
-    className={props.className}
   />  )
 }
 

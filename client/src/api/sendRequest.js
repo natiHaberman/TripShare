@@ -16,6 +16,6 @@ export const sendRequest = async (rideID, userID, accessToken) => {
     console.log("sending request response", response);
     return response;
   } catch (error) {
-    console.error("Sending request failed:", error);
+    throw new Error(error.response.data);
   }
 };

@@ -13,10 +13,11 @@ import Profile from "./pages/Profile";
 import NewRide from "./pages/NewRide";
 import Rides from "./pages/Rides";
 import Requests from "./pages/Requests";
+import OngoingRide from "./pages/OngoingRide";
 import { useAuth } from "./hooks/auth-hook";
 
 function App() {
-  const { accessToken, login, logout, refresh, userID, isLoggedIn } = useAuth();
+  const { accessToken, login, logout, refresh, userID, isLoggedIn, register } = useAuth();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -36,6 +37,8 @@ function App() {
     routes = (
       <Routes>
         <Route path="/" element={<Rides />} />
+        <Route path="/ongoing" element={<OngoingRide />} />
+        <Route path="/rides" element={<Rides />} />
         <Route path="/new" element={<NewRide />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/requests" element={<Requests />} />
@@ -52,7 +55,7 @@ function App() {
   }
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, login, logout, accessToken, userID }}
+      value={{ isLoggedIn, login, logout, accessToken, userID, register }}
     >
       <Router>
         <MainNavigation />

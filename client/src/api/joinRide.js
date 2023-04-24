@@ -19,6 +19,6 @@ export const joinRide = async (rideID, userID, accessToken) => {
     const ride = response.data.ride;
     return ride;
   } catch (error) {
-    console.error("Joining ride failed:", error);
+    throw new Error(error.response.data);
   }
 }

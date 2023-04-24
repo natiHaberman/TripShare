@@ -1,21 +1,20 @@
 import axios from "axios";
 
-export const deleteRequest = async (requestID, userID, accessToken) => {
+export const cancelRequest = async (requestID, userID, accessToken) => {
   try {
     const response = await axios.delete(
-      `http://localhost:5000/requests/delete`,
-      {requestID, userID},
+      `http://localhost:5000/requests/cancel`,
       {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
         withCredentials: true,
+        data: { requestID, userID }, 
       }
     );
-    console.log(response);
     return response;
   } catch (error) {
-    console.error("Deleting request failed:", error);
+    throw new Error(error.response.data);
   }
 };

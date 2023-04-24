@@ -14,12 +14,19 @@ const MapInput = ({ placeholder, value, setValue, onPlaceSelected }) => {
     }
   }, [setValue, onPlaceSelected]);
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <input
       ref={inputRef}
       placeholder={placeholder}
       value={value}
       onChange={(e) => setValue(e.target.value)}
+      onKeyPress={handleKeyPress} 
     />
   );
 };

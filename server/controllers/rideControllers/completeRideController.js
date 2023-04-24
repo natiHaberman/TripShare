@@ -37,20 +37,19 @@ const handleCompleteRide = async (req, res, next) => {
     const error = new HttpError("Ride is already canceled.", 404);
     return next(error);
   }
-  let passenger, driver;
   try {
-    driver = await User.findById(ride.driver);
-    passenger = await User.findById(ride.passenger);
+    const driver = await User.findById(ride.driver);
+    driver.ride = null;
+    await driver.save();
+  } catch {}
+  try {
+    const passenger = await User.findById(ride.passenger);
+    passenger.ride = null;
+    await passenger.save();
+  } catch {}
+  try {
     ride.type = "completed";
     await ride.save();
-    if(driver) {
-      driver.ride = null;
-      await driver.save();
-    }
-    if(passenger) {
-      passenger.ride = null;
-      await passenger.save();
-    }
   } catch (err) {
     const error = new HttpError(
       "Completing ride failed, please try again later.",

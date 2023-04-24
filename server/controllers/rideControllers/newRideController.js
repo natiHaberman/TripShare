@@ -31,28 +31,17 @@ const handleNewRide = async (req, res, next) => {
   try {
     const { distance, duration } = await getDistanceMatrix(origin, destination);
     console.log(distance.text, duration.text);
-    if (role === "driver") {
-      await Ride.create({
+      const ride = await Ride.create({
         type: "pending",
-        driver: userID,
-        origin: origin,
-        destination: destination,
-        distance: distance.text,
-        duration: duration.text,
-        departureTime: departureTime,
-        
-      });
-    } else {
-      await Ride.create({
-        type: "pending",
-        passenger: userID,
+        [role]: userID,
         origin: origin,
         destination: destination,
         distance: distance.text,
         duration: duration.text,
         departureTime: departureTime,
       });
-    }
+      user.ride = ride._id;
+      await user.save();
   } catch {
     const error = new HttpError("creating ride failed, please try again.", 500);
     return next(error);

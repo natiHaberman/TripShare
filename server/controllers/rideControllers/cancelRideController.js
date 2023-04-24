@@ -45,25 +45,24 @@ const handleCancelRide = async (req, res, next) => {
     const error = new HttpError("Could not find user for provided id.", 404);
     return next(error);
   }
-  let otherUser;
-  if (ride.driver?.toString() === userID)
-    otherUser = await User.findById(ride.passenger);
-  else if (ride.passenger?.toString() === userID)
-    otherUser = await User.findById(ride.driver);
-  else {
+  if (ride.driver?.toString() !== userID && ride.passenger?.toString() !== userID) {
     const error = new HttpError("User is not authorized to cancel ride.", 401);
     return next(error);
   }
   try {
-    user.ride = null;
-    await user.save();
-    if (otherUser) {
-      otherUser.ride = null;
-      otherUser.save();
-    }
+    const driver = await User.findById(ride.driver);
+    driver.ride = null;
+    await driver.save();
+  } catch {}
+  try {
+    const passenger = await User.findById(ride.passenger);
+    passenger.ride = null;
+    await passenger.save();
+  } catch {}
+  try {
     ride.type = "canceled";
     await ride.save();
-  } catch {
+  } catch (err) {
     const error = new HttpError(
       "Canceling ride failed, please try again later.",
       500

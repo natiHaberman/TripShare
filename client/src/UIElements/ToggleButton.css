@@ -1,4 +1,5 @@
 .toggle-container {
+    margin-top: 2rem;
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;

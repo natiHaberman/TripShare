@@ -20,9 +20,8 @@ export const newRide = async (
         withCredentials: true,
       }
     );
-    const ride = response.data.ride;
-    return ride;
   } catch (error) {
-    console.error("Creating ride failed:", error);
+    console.log("Creating ride failed:", error.response.data);
+    throw new Error(error.response.data);
   }
 };

@@ -12,6 +12,6 @@ export const findUser = async (uid,accessToken) => {
       const user = response.data.user;
       return user;
     } catch (error) {
-      console.error("Fetching user failed:", error);
+      throw new Error(error.response.data);
     }
   };

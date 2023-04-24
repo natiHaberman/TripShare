@@ -45,7 +45,10 @@ const handleAcceptRequest = async (req, res, next) => {
     );
     return next(error);
   }
-
+  if (user.ride){
+    const error = new HttpError("You are already in a ride.", 401);
+    return next(error);
+  }
   try {
     const session = await Request.startSession();
     session.startTransaction();

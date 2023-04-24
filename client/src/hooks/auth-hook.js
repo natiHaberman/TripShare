@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {refreshToken} from "../api/checkToken";
 
 export const useAuth = () => {
   const [accessToken, setAccessToken] = useState("");
@@ -31,7 +30,6 @@ export const useAuth = () => {
         }
       );
 
-      console.log(response);
       setAccessToken(response.data.accessToken);
       setUserID(response.data.userID);
       setIsLoggedIn(true);
@@ -46,8 +44,34 @@ export const useAuth = () => {
       );
     } catch (error) {
       console.log(error);
+      throw new Error("Login failed, please check your credentials and try again");
     }
   };
+
+  const register = async (email, password, username) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/user/register",
+        {
+          email,
+          password,
+          username,
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+    }
+    catch (err) {
+      console.log(err);
+      throw new Error("Registration failed, please try again");
+    }
+    login(email, password);
+  };
+
+
+
 
   const logout = async () => {
     try {
@@ -101,5 +125,6 @@ export const useAuth = () => {
     logout,
     refresh,
     isLoggedIn,
+    register,
   };
 };

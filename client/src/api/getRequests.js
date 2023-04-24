@@ -16,6 +16,6 @@ export const fetchRequests = async (userID, accessToken) => {
     const requests = response.data.requests;
     return requests;
   } catch (error) {
-    console.error("Fetching requests failed:", error);
+    throw new Error(error.response.data);
   }
 };
