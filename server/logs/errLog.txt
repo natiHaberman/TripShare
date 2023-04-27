@@ -551,3 +551,117 @@
 20230424	21:54:23	9c0e52b7-fb52-4f67-8ac4-2a3441011af6	Error: rideID and userID are required.
 20230424	21:54:49	902ab0c2-fda1-4155-965c-0aaa035a7390	Error: rideID and userID are required.
 20230424	21:56:36	5f25b404-580a-4faa-8b1e-f9fd2be3f6ae	Error: rideID and userID are required.
+20230425	10:22:41	b7d1aefd-7708-48a3-8e92-a30a2d4eac6e	Error: Cookie has expired, please log in
+20230425	11:05:10	d4683391-0956-44a0-9fbe-5cd37c41ae6d	Error: Something went wrong, could not find user.
+20230425	11:08:55	e9e62e0a-2c3d-401e-80a6-8bb03bb5ec80	Error: Something went wrong, could not find user.
+20230425	11:08:55	df4c6d63-4b08-41b6-872a-3ae8d37836b8	Error: Something went wrong, could not find user.
+20230425	11:10:57	bcc5627e-0b7f-40dd-9b23-b8d62a3a73f5	Error: Something went wrong, could not find user.
+20230425	11:11:50	7a2de2a3-2273-4d92-b1d1-56b5ae990de2	Error: Something went wrong, could not find user.
+20230425	11:12:40	f5b0d40e-5383-4f18-8a1c-ae6a0adc9f95	Error: userID and requestID are required.
+20230425	11:13:44	f90dc0fa-7d13-4a82-b955-4d105be6db0a	Error: userID and requestID are required.
+20230425	11:14:27	5ede2a4c-4782-4ac5-aa91-8f6d0b915cea	Error: userID and requestID are required.
+20230425	11:14:59	44e58142-f1bc-4779-b40b-fb9de41425bd	Error: userID and requestID are required.
+20230425	11:16:19	7eefcc5e-a370-42d0-b70e-cf4cb984076a	Error: You are already in a ride.
+20230425	11:41:47	42ad6c06-f535-4c8b-9b73-3167f07f9d87	Error: Cookie has expired, please log in
+20230425	12:11:57	5aef841e-07fc-4d07-ab88-c67ebae9d9cd	Error: You are already in a ride.
+20230425	12:23:27	850f1cc5-5d15-4f65-8f60-784915cba3c0	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230425	12:44:31	0abce452-b6fc-4e88-a6f3-db877d102e43	Error: Cookie has expired, please log in
+20230426	18:34:49	4eb8f0a3-31a3-44bc-bcbb-0a52ae2d8d9b	Error: Could not find sender or recipient.
+20230426	18:40:09	865b041d-7666-445e-9bb8-59fb95e1c614	Error: You are already in a ride.
+20230426	19:11:58	6d203db9-2c0d-4aa4-93fd-ae7456ca0561	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230426	19:16:47	7d1b53f6-6269-41be-bee2-d24f98f8cdad	Error: Fetching users to complete ride failed, please try again later
+20230426	19:16:54	3c56bd8a-9a5a-4ef9-83aa-c4ffa4e8b5f0	Error: Ride is not valid and therefore cannot be canceled.
+20230426	19:17:20	c48558a1-b060-4b0b-87ed-29d8e40c5e8d	Error: Fetching users to complete ride failed, please try again later
+20230426	19:18:14	22c742e8-3f1c-4b7e-8f40-ecdc6bcaac81	Error: Ride is not valid and therefore cannot be canceled.
+20230426	19:25:30	da27e7f8-738d-46b7-a10f-fbc32dc19504	Error: Fetching users to complete ride failed, please try again later
+20230426	19:28:00	f1e35150-c036-4500-af29-24bce7598984	Error: Fetching users to complete ride failed, please try again later
+20230426	20:18:35	eb9fa511-9974-4c2d-980b-8b6deb0fae84	Error: Unathorized access
+20230426	22:25:42	18c81d52-db2b-4aaa-9e54-d00bf6246c0d	Error: Cookie has expired, please log in
+20230426	23:07:20	65d900ae-235a-4eb2-9d63-9633e157e09e	Error: Could not find this route.
+20230426	23:07:59	361e3b0e-eeb1-4bf3-a0c0-ce5e7d6bcd85	Error: Could not find this route.
+20230426	23:10:52	18242ed6-3653-4c15-9481-8b027a9ff5ca	Error: Unathorized access
+20230426	23:10:53	f0faf198-71b2-4b73-800c-85277fde2031	Error: Unathorized access
+20230426	23:10:57	70fe27c4-663a-4076-a6b3-76aebf22a768	Error: Unathorized access
+20230426	23:10:57	0cc2caff-b019-4754-aa38-8619580bc579	Error: Unathorized access
+20230426	23:11:09	8b6585b6-bd8f-486e-8784-bdf563133cfe	Error: Could not find this route.
+20230426	23:11:38	612229d4-6428-4e15-8d7d-7d55bfa8c2ed	Error: Could not find this route.
+20230426	23:17:58	f4894a05-cd2b-41ac-bfd4-6e23bdaff361	Error: Could not find this route.
+20230427	11:38:49	421791c9-dde6-4d16-a5df-ca12856b4450	Error: You have already sent a request for this ride.
+20230427	11:40:22	f78192eb-cab4-405c-82a1-9f617b5e73d5	Error: You have already sent a request for this ride.
+20230427	12:31:30	a17eed02-09e6-4672-9cc6-df69f0c96404	Error: Unathorized access
+20230427	12:31:30	a47c3713-4969-49ff-96a4-b21cb2488dc4	Error: Unathorized access
+20230427	12:31:33	db2d95f5-601e-476a-834b-a9ba512e7132	Error: Unathorized access
+20230427	12:31:33	d6746190-b24b-4679-af14-63823b291e0b	Error: Unathorized access
+20230427	12:31:34	5e2eea1f-9a14-46a9-870e-95bc166e6a50	Error: Unathorized access
+20230427	12:31:34	460d461d-2632-436c-8458-408c79165d26	Error: Unathorized access
+20230427	12:39:48	99259f4a-46f5-4872-84a7-bfaa71cc81ea	Error: You already have a ride. Cancel it first if you wish to create a new one
+20230427	12:58:18	3aeafd7d-868c-419d-b8e8-550f626b69c0	Error: Unathorized access
+20230427	12:58:46	210a93f7-fe25-4188-855d-cc986fc58492	Error: Unathorized access
+20230427	12:58:46	1fca4620-b38e-43b8-af79-e1dac12436f4	Error: Unathorized access
+20230427	12:59:02	e86fa094-76d8-4346-a771-46628f9a32ed	Error: Something went wrong, could not find user.
+20230427	12:59:02	d41d189d-6969-4f29-aab9-c2025d702e62	Error: Something went wrong, could not find user.
+20230427	12:59:03	9a0bb0a6-513e-4da3-906e-5745d8107798	Error: Something went wrong, could not find user.
+20230427	12:59:03	6ab88412-d63d-48c8-a415-785e6c61af09	Error: Something went wrong, could not find user.
+20230427	13:18:10	8d81f72e-ce2d-4dd1-b34d-eb5d235b0ed0	Error: Unathorized access
+20230427	13:20:22	8600396e-2aba-4c0a-a03b-b5fb1b6cad1d	Error: Unathorized access
+20230427	13:20:22	9f12d63b-e2fd-487e-a12f-f27fecba62ba	Error: Unathorized access
+20230427	13:20:33	499f3156-ab0d-4afc-a038-f4326a271c92	Error: Something went wrong, could not find user.
+20230427	13:20:33	26ba2776-5284-4220-9606-65be4a2f03b7	Error: Something went wrong, could not find user.
+20230427	13:38:38	0a463857-23e2-43cc-adac-93fb8d164f49	Error: authorID, subjectID, rating, and text are required.
+20230427	13:42:47	8a3bd85e-b3bc-4aca-bc8a-5ecb7b907854	Error: Canceling ride failed, please try again later.
+20230427	13:43:52	8ddcbc9e-0f06-46a7-8107-d7d369f7057d	Error: Canceling ride failed, please try again later.
+20230427	13:45:58	db3a59ec-47b1-4fc5-ac61-fd102e72adc4	Error: Canceling ride failed, please try again later.
+20230427	13:54:45	91c84592-e2e1-4fb7-9e4d-38ff2bc63037	Error: authorID, subjectID, rating, and text are required.
+20230427	14:03:12	71d939c0-803f-46bf-965d-3b42b2b5ef89	Error: authorID, subjectID, rating, and text are required.
+20230427	14:08:10	bf1722ef-6ba6-43f3-8c71-8db8f492f748	Error: authorID, subjectID, rating, and text are required.
+20230427	14:14:51	a6900379-6804-466d-9317-83dbd335667c	Error: Please log in.
+20230427	14:27:02	fbe030a6-f68d-4f52-a2c3-ace8c9d1c5bb	Error: Incorrect email or password
+20230427	14:35:31	919decbe-4e4d-437e-a3dc-0ebb4a06a101	Error: Unathorized access
+20230427	14:36:16	3ca13703-cd6a-4a05-b838-62ae0bf47377	Error: Something went wrong, could not create review.
+20230427	14:36:32	db99126d-cdc7-4b19-bc68-9ae7d02a6b36	Error: Unathorized access
+20230427	14:36:33	4b29af4b-bd6f-4fff-8f6e-e642a66195e3	Error: Unathorized access
+20230427	14:37:39	04e20452-01b2-4da2-aa1d-5fa5acd3d4a4	Error: No user exists with that email.
+20230427	14:38:46	e9a6a964-df19-4082-93f3-54395c1b32d0	Error: Unathorized access
+20230427	14:38:53	53e08e9a-b0c0-437d-9663-24488b196cbb	Error: Something went wrong, could not create review.
+20230427	14:38:56	8105c17e-f354-4144-8b69-6b949e672fb7	Error: Something went wrong, could not create review.
+20230427	14:40:39	d7854903-df9e-4534-b333-96a3157bb912	Error: Something went wrong, could not create review.
+20230427	14:40:41	fe048856-17b6-4047-ae8e-d42ddab65e27	Error: Something went wrong, could not create review.
+20230427	14:40:48	46a616a2-7be4-4251-a985-9239783297a7	Error: Something went wrong, could not create review.
+20230427	14:41:51	d84370a7-10a1-42d6-bafa-400a4d4e4afe	Error: Something went wrong, could not create review.
+20230427	14:41:52	a8351490-8091-41ba-b4d2-ae5ac7e4d632	Error: Something went wrong, could not create review.
+20230427	14:42:22	7c04ce58-992d-4298-b8ce-c48b60282144	Error: Something went wrong, could not create review.
+20230427	14:42:43	cf25cb43-d6ef-4365-994f-feaee977d138	Error: Something went wrong, could not create review.
+20230427	14:44:08	47b2a480-3f8c-4072-8980-08715c5f0ccb	Error: Something went wrong, could not create review.
+20230427	14:44:27	baf4ba1a-3a49-406f-8572-ed034cc786f4	Error: Something went wrong, could not create review.
+20230427	14:44:53	6147dae4-1dca-4dac-a747-bcbb2a9b0cf4	Error: Something went wrong, could not create review.
+20230427	14:44:55	b132f83d-28ff-4167-9eff-d20122a79042	Error: Something went wrong, could not create review.
+20230427	14:45:22	25b1a2a6-2d67-4d91-b555-086fac9bd2c4	Error: Something went wrong, could not create review.
+20230427	14:45:23	ba650c24-0500-43ce-800a-a638c58a31cc	Error: Something went wrong, could not create review.
+20230427	14:45:52	cc7b83c5-5813-47de-8b50-2c4df57ab999	Error: Something went wrong, could not create review.
+20230427	14:47:39	9bd15478-3a3d-4e4e-b203-85bc3576fc88	Error: Something went wrong, could not create review.
+20230427	14:47:41	bc7c6198-a03c-4f90-b2eb-fd76ca957f9c	Error: Something went wrong, could not create review.
+20230427	14:48:16	b39868e5-6d26-47c6-9f28-502fe8b85d88	Error: Something went wrong, could not create review.
+20230427	14:48:36	b0a05375-72c0-4722-b47e-274b687bc226	Error: Something went wrong, could not create review.
+20230427	16:39:44	c3b1d8db-87ae-4457-aacc-d952e375a04e	Error: Cookie has expired, please log in
+20230427	16:41:05	c383027d-5e7f-4949-93bf-2665c84757aa	Error: Incorrect email or password
+20230427	17:14:41	37470c66-afae-4289-b6ae-590cd5f49963	Error: Unathorized access
+20230427	17:20:23	01c23287-938d-4dc1-923e-e198940e219a	Error: Unathorized access
+20230427	17:20:23	b983f75d-6baf-4e48-b750-01e09fe38939	Error: Unathorized access
+20230427	17:21:45	36a59ae4-5e0d-4c0f-8a24-e7e0504bb7bf	Error: Unathorized access
+20230427	17:21:50	b8794c04-80b2-454a-badc-7611b782624d	Error: Something went wrong, could not find user.
+20230427	17:21:50	f7ef59fa-5686-4b95-ab30-e196e56e44f2	Error: Something went wrong, could not find user.
+20230427	17:22:19	837b2a44-61c9-4a1f-83ee-11a7eb09cd68	Error: Could not find this route.
+20230427	17:22:19	9538703e-2877-4941-aa82-9cd2203860a6	Error: Could not find this route.
+20230427	17:22:19	383677a8-af93-41da-917f-c81eb15f9d54	Error: Could not find this route.
+20230427	17:23:27	a619ad9a-38a6-4b55-87e3-2c2d67cdb0c1	Error: Could not find this route.
+20230427	17:23:27	59a5c45d-5d55-42ea-8b90-4cc7a2cdbe17	Error: Could not find this route.
+20230427	17:23:27	8736e86f-2022-465a-bf6d-17c91d6fe0ae	Error: Could not find this route.
+20230427	17:23:58	00d8eea0-c603-42f4-a8c4-f566acb24567	Error: Could not find this route.
+20230427	17:23:58	af5814de-9385-41f4-89ee-c07e02b7306a	Error: Could not find this route.
+20230427	17:23:59	ca257284-5d59-4c9f-aa12-39059b2ca988	Error: Could not find this route.
+20230427	17:28:21	65a0abf3-40c3-46eb-83d1-9eac1269b0dd	Error: Could not find this route.
+20230427	17:28:21	80e9073b-73ad-4593-a641-765f073b9d11	Error: Could not find this route.
+20230427	17:28:22	6bd07dd2-ec7f-48ce-b537-cda3a1d02b9b	Error: Could not find this route.
+20230427	17:28:36	a67fb02b-c297-4f41-bc11-48cb7680bf1a	Error: Could not find this route.
+20230427	17:28:37	66f009bb-c20c-4d8d-bc0b-3c9e0e7d5985	Error: Could not find this route.
+20230427	17:28:37	3a741300-e3f1-4863-9018-501d4c61aeb6	Error: Could not find this route.

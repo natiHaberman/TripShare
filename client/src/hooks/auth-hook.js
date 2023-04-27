@@ -6,16 +6,17 @@ export const useAuth = () => {
   const [userID, setUserID] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Check if access token is stored in local storage and set it in state if it is and set isLoggedIn to true
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("userData"));
     if (storedData && storedData.accessToken) {
       setAccessToken(storedData.accessToken);
       setUserID(storedData.userID);
-      setIsLoggedIn(true); // Add this line
+      setIsLoggedIn(true);
     }
   }, []);
 
-  // Use axios and auth api to login
+  // Login function that sets auth-context state and local storage
   const login =async (email, password) => {
     try {
       const response = await axios.post(
@@ -43,11 +44,12 @@ export const useAuth = () => {
         })
       );
     } catch (error) {
-      console.log(error);
       throw new Error("Login failed, please check your credentials and try again");
     }
   };
 
+
+  // Register function that calls login function after successful registration
   const register = async (email, password, username) => {
     try {
       const response = await axios.post(
@@ -71,8 +73,7 @@ export const useAuth = () => {
   };
 
 
-
-
+  // Logout function that clears auth-context state and local storage and redirects to login page
   const logout = async () => {
     try {
       const response = await axios.get(
@@ -85,7 +86,6 @@ export const useAuth = () => {
     setAccessToken("");
     setUserID("");
     setIsLoggedIn(false);
-
     // Remove the access token from local storage
     localStorage.removeItem("userData");
   }
@@ -94,7 +94,8 @@ export const useAuth = () => {
   }
   };
 
-  // callback
+
+  // Refresh function that renews the access token
   const refresh = async () => {
     try {
       const response = await axios.get("http://localhost:5000/user/refresh", {
@@ -110,7 +111,6 @@ export const useAuth = () => {
         accessToken: response.data.accessToken,
       })
     );
-      console.log("new access token: " + response);
       setAccessToken(response);
     } catch {
       logout();
@@ -121,10 +121,10 @@ export const useAuth = () => {
   return {
     accessToken,
     userID,
+    isLoggedIn,
     login,
     logout,
-    refresh,
-    isLoggedIn,
     register,
+    refresh,
   };
 };

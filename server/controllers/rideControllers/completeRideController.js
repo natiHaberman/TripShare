@@ -1,12 +1,16 @@
 const Ride = require("../../models/ride");
+const User = require("../../models/user");
 const HttpError = require("../../models/http-error");
 
 const handleCompleteRide = async (req, res, next) => {
+  // Returns error if body does not include required fields
   const { rideID, userID } = req.body;
   if (!rideID || !userID) {
     const error = new HttpError("rideID and userId are required.", 422);
     return next(error);
   }
+
+  // Searches for ride in database and returns error if fails
   let ride;
   try {
     ride = await Ride.findById(rideID);
@@ -17,11 +21,35 @@ const handleCompleteRide = async (req, res, next) => {
     );
     return next(error);
   }
+
+  // Returns error if ride is not found
   if (!ride) {
     const error = new HttpError("Could not find ride for provided id.", 404);
     return next(error);
   }
 
+  let driver, passenger;
+  try {
+    driver = await User.findById(ride.driver);
+    passenger = await User.findById(ride.passenger);
+  } catch (err) {
+    const error = new HttpError(
+      "Fetching users to complete ride failed, please try again later",
+      500
+    );
+    return next(error);
+  }
+
+  // Returns error if ride is not ongoing or missing driver or passenger
+  if (ride.type !== "ongoing" || !ride.driver || !ride.passenger) {
+    const error = new HttpError(
+      "Ride is not valid and therefore cannot be completed.",
+      404
+    );
+    return next(error);
+  }
+
+  // Returns error if user is not part of ride
   if (
     ride.driver?.toString() !== userID &&
     ride.passenger?.toString() !== userID
@@ -29,27 +57,21 @@ const handleCompleteRide = async (req, res, next) => {
     const error = new HttpError("User is not part of this ride.", 404);
     return next(error);
   }
-  if (ride.type === "completed") {
-    const error = new HttpError("Ride is already completed.", 404);
-    return next(error);
-  }
-  if (ride.type === "canceled") {
-    const error = new HttpError("Ride is already canceled.", 404);
-    return next(error);
-  }
+
+  // Completes ride and returns error if it fails
   try {
-    const driver = await User.findById(ride.driver);
+    // Starts session to ensure that the ride is completed at the same time for both users and the ride
+    const session = await Ride.startSession();
+    session.startTransaction();
     driver.ride = null;
-    await driver.save();
-  } catch {}
-  try {
-    const passenger = await User.findById(ride.passenger);
+    driver.ridesGiven++;
+    await driver.save({ session: session });
     passenger.ride = null;
-    await passenger.save();
-  } catch {}
-  try {
+    passenger.ridesTaken++;
+    await passenger.save({ session: session });
     ride.type = "completed";
-    await ride.save();
+    await ride.save({ session: session });
+    await session.commitTransaction();
   } catch (err) {
     const error = new HttpError(
       "Completing ride failed, please try again later.",

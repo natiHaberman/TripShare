@@ -3,6 +3,7 @@ const HttpError = require("../../models/http-error");
 const User = require("../../models/user");
 
 const handleNewUser = async (req, res, next) => {
+  // Checks if the request body has the required fields
   const { username, email, password } = req.body;
   if (!username || !password || !email) {
     const error = new HttpError(
@@ -11,13 +12,28 @@ const handleNewUser = async (req, res, next) => {
     );
     return next(error);
   }
-  // Check for duplicate usernames in the db
-  const duplicate = await User.findOne({ email: email }).exec();
+
+  // Retrieves the user from the database and returns an error if it fails
+  let duplicate;
+  try {
+    duplicate = await User.findOne({ email: email }).exec();
+  } catch (err) {
+    const error = new HttpError(
+      "Signing up failed, please try again later.",
+      500
+    );
+    return next(error);
+  }
+
+  // Checks if the user already exists and returns an error if it does
   if (duplicate) {
     const error = new HttpError("Email is already registered", 409);
     return next(error); //Conflict
   }
+
+  // Creates the new user and returns an error if it fails
   try {
+
     // Encrypts the password
     const hashedPwd = await bcrypt.hash(password, 10);
 
@@ -31,6 +47,9 @@ const handleNewUser = async (req, res, next) => {
       reviews: [],
       ride: null,
       refreshToken: "",
+      ridesTaken: 0,
+      ridesGiven: 0,
+      model: "Tesla Model 3"
     });
 
     res.status(201).json({ success: `New user ${username} created!` });

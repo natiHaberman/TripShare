@@ -5,11 +5,15 @@ const mongoose = require("mongoose");
 const HttpError = require("../../models/http-error");
 
 const handleSendRequest = async (req, res, next) => {
+
+  // Returns error if body does not include required fields
   const { rideID, userID } = req.body;
   if (!rideID || !userID) {
     const error = new HttpError("rideID and userID are required.", 422);
     return next(error);
   }
+
+  // Searches for ride in database and returns error if fails
   let ride;
   try {
     ride = await Ride.findById(rideID);
@@ -20,14 +24,20 @@ const handleSendRequest = async (req, res, next) => {
     );
     return next(error);
   }
+
+  // Returns error if ride is not found
   if (!ride) {
     const error = new HttpError("Could not find ride for provided id.", 404);
     return next(error);
   }
+
+  // Returns error if ride is not available
   if (ride.type !== "pending") {
     const error = new HttpError("Ride is unavailable.", 404);
     return next(error);
   }
+
+  // Returns error if fails to fetch users
   let sender, recipient;
   try {
     sender = await User.findById(userID);
@@ -39,22 +49,46 @@ const handleSendRequest = async (req, res, next) => {
     );
     return next(error);
   }
+
+  // Returns error if sender or recipient are not found
   if (!sender || !recipient) {
     const error = new HttpError(
-      "Could not find sender or recipent for provided id.",
+      "Could not find sender or recipient for provided id.",
       404
     );
     return next(error);
   }
+
+  // Returns error if sender and recipient are the same
   if (sender._id.toString() === recipient._id.toString()) {
     const error = new HttpError("You cannot send a request to yourself.", 404);
     return next(error);
   }
 
+  // Returns error if user has already requested to join this ride
+  let otherRequest;
   try {
-    const sess = await mongoose.startSession();
-    sess.startTransaction();
-    const request = await Request.create({
+    otherRequest = await Request.findOne({
+      sender: sender._id,
+      ride: ride._id,
+      type: "pending",
+    });
+  } catch (err) {}
+  if (otherRequest) {
+    const error = new HttpError(
+      "You have already sent a request for this ride.",
+      404
+    );
+    return next(error);
+  }
+
+  // Sends request and returns error if fails
+  try {
+
+    // Starts transaction to ensure all changes are made or none are made
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    const request = new Request({
       sender: userID,
       ride: ride._id,
       recipient: ride.driver || ride.passenger,
@@ -63,9 +97,10 @@ const handleSendRequest = async (req, res, next) => {
     });
     sender.requests.push(request._id);
     recipient.requests.push(request._id);
-    await sender.save({ session: sess });
-    await recipient.save({ session: sess });
-    await sess.commitTransaction();
+    await request.save({ session: session });
+    await sender.save({ session: session });
+    await recipient.save({ session: session });
+    await session.commitTransaction();
   } catch (err) {
     const error = new HttpError(
       "Sending request failed, please try again later.",

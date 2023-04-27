@@ -1,5 +1,6 @@
 const allowedOrigins = require('./allowedOrigins');
 
+// CORS options for CORS middleware
 const corsOptions = {
     origin: (origin, callback) => {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {

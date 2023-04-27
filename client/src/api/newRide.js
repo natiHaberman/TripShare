@@ -21,7 +21,6 @@ export const newRide = async (
       }
     );
   } catch (error) {
-    console.log("Creating ride failed:", error.response.data);
     throw new Error(error.response.data);
   }
 };

@@ -13,7 +13,6 @@ export const sendRequest = async (rideID, userID, accessToken) => {
         withCredentials: true,
       }
     );
-    console.log("sending request response", response);
     return response;
   } catch (error) {
     throw new Error(error.response.data);

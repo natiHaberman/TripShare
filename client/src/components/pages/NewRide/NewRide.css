@@ -1,0 +1,16 @@
+.ride-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .button-container {
+    flex-direction: row;
+  }
+}

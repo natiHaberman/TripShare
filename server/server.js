@@ -27,6 +27,10 @@ app.use('/user/auth', require('./routes/userRoutes/auth'));
 app.use('/user/refresh', require('./routes/userRoutes/refresh'));
 app.use('/user/logout', require('./routes/userRoutes/logout'));
 
+
+// Verify JWT for all routes below
+app.use(verifyJWT);
+app.use('/user/update', require('./routes/userRoutes/update'));
 app.use('/rides/new', require('./routes/rideRoutes/newRide'));
 app.use('/user/find', require('./routes/userRoutes/findUser'));
 
@@ -39,8 +43,8 @@ app.use('/requests/new', require('./routes/requestRoutes/sendRequest'));
 app.use('/requests/cancel', require('./routes/requestRoutes/cancelRequest'));
 app.use('/requests/accept', require('./routes/requestRoutes/acceptRequest'));
 
-app.use(verifyJWT);
-
+app.use('/reviews/new', require('./routes/reviewRoutes/createReview'));
+app.use('/reviews/all', require('./routes/reviewRoutes/getReviews'));
 
 
 app.use((req, res, next) => {

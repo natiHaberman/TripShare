@@ -1,0 +1,27 @@
+.ongoing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+
+.ride-info {
+  margin-top: 2rem;
+  flex: 1;
+  box-sizing: border-box;
+  margin: 0.5rem;
+}
+
+.ride-info p {
+  margin: 0.25rem 0; /* Adjust the margin values to bring the <p> elements closer together */
+}
+
+.ride-info h2 {
+  margin-top: 3rem;
+}
+
+.button-container{
+  margin-bottom: 3rem;
+}
