@@ -12,7 +12,7 @@ const errorHandler = require('./middleware/errorHandler');
 const credentials = require('./middleware/credentials');
 const verifyJWT = require('./middleware/verifyJWT');
 const HttpError = require('./models/http-error');
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 connectDB();
 app.use(logger);

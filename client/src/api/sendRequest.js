@@ -3,7 +3,7 @@ import axios from "axios";
 export const sendRequest = async (rideID, userID, accessToken) => {
   try {
     const response = await axios.post(
-      `http://localhost:5000/requests/new`,
+      `https://joy-ride.herokuapp.com/requests/new`,
       { rideID, userID },
       {
         headers: {

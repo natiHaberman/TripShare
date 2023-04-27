@@ -44,6 +44,7 @@ const handleCreateReview = async (req, res, next) => {
 
   // Creates new review and saves it to database and returns error if fails
   try {
+    
     // Start session to ensure that all operations are atomic
     const session = await mongoose.startSession();
     session.startTransaction();

@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchReviews = async (accessToken, uid, type) => {
   try {
     const response = await axios.get(
-      `http://localhost:5000/reviews/all/${uid}/${type}`,
+      `https://joy-ride.herokuapp.com/reviews/all/${uid}/${type}`,
       {
         headers: {
           "Content-Type": "application/json",

@@ -20,7 +20,8 @@ export const useAuth = () => {
   const login =async (email, password) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/user/auth",
+        //`${process.env.https://joy-ride.herokuapp.com}/user/auth`,
+        `https://joy-ride.herokuapp.com/user/auth`,
         {
           email,
           password,
@@ -52,8 +53,8 @@ export const useAuth = () => {
   // Register function that calls login function after successful registration
   const register = async (email, password, username) => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/user/register",
+      await axios.post(
+        `https://joy-ride.herokuapp.com/user/register`,
         {
           email,
           password,
@@ -76,8 +77,8 @@ export const useAuth = () => {
   // Logout function that clears auth-context state and local storage and redirects to login page
   const logout = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:5000/user/logout",
+      await axios.get(
+        `https://joy-ride.herokuapp.com/user/logout`,
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -98,7 +99,7 @@ export const useAuth = () => {
   // Refresh function that renews the access token
   const refresh = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/user/refresh", {
+      const response = await axios.get("https://joy-ride.herokuapp.com/user/refresh", {
       headers: {
         "Content-Type": "application/json",
       },

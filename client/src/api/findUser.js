@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const findUser = async (uid,accessToken) => {
     try {
-      const response = await axios.get(`http://localhost:5000/user/find/${uid}`, {
+      const response = await axios.get(`https://joy-ride.herokuapp.com/user/find/${uid}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,

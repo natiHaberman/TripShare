@@ -2,6 +2,7 @@ const Review = require("../../models/review");
 const HttpError = require("../../models/http-error");
 
 const handleGetReviews = async (req, res, next) => {
+  
   // Returns error if params does not include uid
   const uid = req.params.uid;
   const type = req.params.type;

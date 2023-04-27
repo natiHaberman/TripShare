@@ -6,8 +6,8 @@ export const createReview = async (authorID, subjectID, rating, text, accessToke
     console.log("subjectID", subjectID)
     console.log("rating", rating)
     console.log("text", text)
-    const response = await axios.post(
-      `http://localhost:5000/reviews/new`,
+    await axios.post(
+      `https://joy-ride.herokuapp.com/reviews/new`,
       { authorID, subjectID, rating, text },
       {
         headers: {

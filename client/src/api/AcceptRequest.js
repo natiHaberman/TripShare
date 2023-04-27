@@ -3,7 +3,7 @@ import axios from "axios";
 export const acceptRequest = async (requestID, userID, accessToken) => {
   try {
     const response = await axios.patch(
-      `http://localhost:5000/requests/accept`,
+      `https://joy-ride.herokuapp.com/requests/accept`,
       {requestID, userID },
       {
         headers: {

@@ -9,8 +9,8 @@ export const newRide = async (
   accessToken
 ) => {
   try {
-    const response = await axios.post(
-      `http://localhost:5000/rides/new`,
+    await axios.post(
+      `https://joy-ride.herokuapp.com/rides/new`,
       { role, userID, origin, destination, departureTime },
       {
         headers: {

@@ -3,7 +3,7 @@ import axios from "axios";
 export const cancelRequest = async (requestID, userID, accessToken) => {
   try {
     const response = await axios.delete(
-      `http://localhost:5000/requests/cancel`,
+      `https://joy-ride.herokuapp.com/requests/cancel`,
       {
         headers: {
           "Content-Type": "application/json",

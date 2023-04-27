@@ -18,6 +18,7 @@ const Profile = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setReviews] = useState([]);
 
+  // Fetches user data and reviews on mount
   useEffect(() => {
     setIsLoading(true);
     (async () => {
@@ -31,6 +32,8 @@ const Profile = () => {
     setIsLoading(false);
   }, [user.email, user.carModel,  userID, accessToken]);
   
+
+  // Updates user data
   const handleSaveChanges = async () => {
     setIsLoading(true);
     if (currentEmail !== user.email) {

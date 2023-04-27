@@ -4,7 +4,7 @@ export const fetchRequests = async (userID, accessToken) => {
   try {
     const uid = userID;
     const response = await axios.get(
-      `http://localhost:5000/requests/index/${uid}`,
+      `https://joy-ride.herokuapp.com/requests/index/${uid}`,
       {
         headers: {
           "Content-Type": "application/json",

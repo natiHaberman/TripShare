@@ -3,7 +3,7 @@ import axios from "axios";
 export const completeRide = async (rideID, userID, accessToken) => {
     try {
         const response = await axios.patch(
-        `http://localhost:5000/rides/complete`,
+        `https://joy-ride.herokuapp.com/rides/complete`,
         { rideID, userID },
         {
             headers: {

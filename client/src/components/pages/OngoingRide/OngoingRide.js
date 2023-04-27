@@ -9,7 +9,6 @@ import { withMapLoader } from "../../mapElements/withMapLoader";
 import Map from "../../mapElements/Map";
 import Card from "../../UIElements/Card/Card";
 import LoadingSpinner from "../../UIElements/LoadingSpinner/LoadingSpinner";
-import Stars from "../../UIElements/Stars";
 import ConfirmModal from "./ConfirmModal";
 import CancelModal from "./CancelModal";
 import "./OngoingRide.css";
@@ -39,7 +38,7 @@ function OngoingRide() {
     try {
       setIsLoading(true);
       const rideID = ride._id;
-      const response = await cancelRide(rideID, userID, accessToken);
+      await cancelRide(rideID, userID, accessToken);
       alert("Ride canceled");
       setIsLoading(false);
       navigate("/");
@@ -54,7 +53,7 @@ function OngoingRide() {
     try {
       setIsLoading(true);
       const rideID = ride._id;
-      const response = await completeRide(rideID, userID, accessToken);
+      completeRide(rideID, userID, accessToken);
       navigate("/");
     } catch (err) {
       setIsLoading(false);
@@ -66,7 +65,7 @@ function OngoingRide() {
       const subjectID = ride.userID;
       const text = review;
 
-      const response = await createReview(
+      await createReview(
         authorID,
         subjectID,
         rating,

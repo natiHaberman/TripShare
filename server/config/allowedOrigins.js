@@ -1,8 +1,8 @@
 // Allowed origins for CORS middleware
 
 const allowedOrigins = [
-    'http://localhost:3000',
-    'http://localhost:5000'
+    `${process.env.REACT_APP_BACKEND_URL}`,
+    `${process.env.REACT_APP_FRONTEND_URL}`
 ];
 
 module.exports = allowedOrigins;
