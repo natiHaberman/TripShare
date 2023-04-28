@@ -6,7 +6,6 @@ import { fetchRides } from "../api/getRides";
 import { formatDateToTime } from "../util/formatDateToTime";
 
 export const useRequests = () => {
-  const [hookLoading, setHookLoading] = useState(false);
   const { userID, accessToken } = useContext(AuthContext);
   const [pendingRequests, setPendingRequests] = useState([]);
   const [acceptedRequests, setAcceptedRequests] = useState([]);
@@ -16,11 +15,9 @@ export const useRequests = () => {
 
   // Calls helper functions to fetch and sort data on mount and on rerender for requests and ongoing ride pages
   useEffect(() => {
-    setHookLoading(true);
     (async () => {
       const [ridesData, requestData, userData] = await fetchData();
       if (!ridesData || !requestData || !userData) {
-        setHookLoading(false);
         throw new Error("Error fetching data");
       }
       await setUserRide(ridesData, userData, userID);
@@ -32,9 +29,7 @@ export const useRequests = () => {
           userData,
           accessToken
         );
-        setHookLoading(false);
       } catch (err) {
-        setHookLoading(false);
         throw new Error("Error sorting data");
       }
       setPendingRequests(pending);
@@ -68,7 +63,7 @@ export const useRequests = () => {
   const setUserRide = async (ridesData, userData, userID) => {
     // Finds ride associated with user and returns if it doesn't exist
     const ride = ridesData.find((r) => r._id === userData.ride);
-    if (!ride) return;
+    if (!ride) return {role: "none"}; //  Used for requests page rendering
     let role;
 
     // Sets user's role in ride
@@ -153,7 +148,6 @@ export const useRequests = () => {
         status: request.type,
         recipient: request.recipient,
         sender: request.sender,
-        rating: otherUser.rating,
       };
 
       // Sorts requests by status
@@ -175,6 +169,5 @@ export const useRequests = () => {
     acceptedRequests,
     canceledRequests,
     rerender,
-    hookLoading,
   };
 };

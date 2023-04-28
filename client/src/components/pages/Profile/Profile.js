@@ -61,7 +61,7 @@ const Profile = () => {
 
   return (
     <div className="user-profile">
-      {isLoading && <LoadingSpinner asOverlay />}
+      {(isLoading || !user?._id) && <LoadingSpinner asOverlay />}
       <div className="user-info">
         <h2>Username: {user.username}</h2>
         <div className="inline-field">

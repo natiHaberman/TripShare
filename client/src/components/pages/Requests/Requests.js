@@ -16,7 +16,6 @@ const Requests = () => {
     acceptedRequests,
     canceledRequests,
     rerender,
-    hookLoading,
   } = useRequests();
   const { userID, accessToken } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
@@ -51,9 +50,9 @@ const Requests = () => {
 
   return (
     <div className="requests-container">
+      {(isLoading || !ride?.role) && <LoadingSpinner asOverlay />}
       {ride?._id && (
         <div>
-          {(isLoading || hookLoading) && <LoadingSpinner asOverlay />}
           <h2>Your Ride:</h2>
           <div className="user-ride-item">
             <div className="ride-info">

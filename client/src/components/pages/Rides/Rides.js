@@ -18,11 +18,12 @@ const Rides = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { accessToken, userID } = useContext(AuthContext);
 
+
   // Sets the order of the rides based on the order the user selected 
   const orderBy = (rides, order) => {
     return rides.sort((a, b) => {
       if (order === "name") {
-        return a.name.localeCompare(b.name);
+        return a.username.localeCompare(b.username);
       } else if (order === "rating") {
         return b.rating - a.rating;
       } else if (order === "departureTime") {
@@ -49,7 +50,7 @@ const Rides = () => {
 
   return (
     <div className="find-rides-page">
-      {isLoading && <LoadingSpinner asOverlay />}
+      {(!rides?.length>0 || isLoading) && <LoadingSpinner asOverlay />}
       {rides.length > 0 ? (
         <>
           <div className="sort">
@@ -87,6 +88,7 @@ const Rides = () => {
                     <h3>
                       {ride.name} ({ride.role})
                     </h3>
+                    <p>Username: {ride.username}</p>
                     <p>Start: {ride.origin}</p>
                     <p>End: {ride.destination}</p>
                     <p>

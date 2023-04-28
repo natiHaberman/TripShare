@@ -59,7 +59,7 @@ function App() {
       value={{ login, logout, accessToken, userID, register, isLoggedIn }}
     >
       <Router>
-        <MainNavigation />
+        <MainNavigation isLoggedIn={isLoggedIn} />
         <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
