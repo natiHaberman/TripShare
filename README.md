@@ -1,6 +1,4 @@
-This project has been created with the goal of improving my web-devpolpment capabilies through building a live fill stack web-application.
-JoyRide is a ridesharing web application aimed at enabling people to conncect in order to carpool.
-
+Created with the goal of improving my web-development capabilities, this project is a live full stack web-application built using the MERN stack. JoyRide is a ridesharing web application aimed at enabling people to connect in order to carpool. 
 These are the following areas in which I would like to improve the project:
 
 -Fix the buggy MapInput component which causes rerendering when hitting enter.
@@ -13,4 +11,4 @@ These are the following areas in which I would like to improve the project:
 
 -Improve security.
 
--Modify the application to adress date of ride departure instead of only time.
+-Modify the application to address date of ride departure instead of only time
