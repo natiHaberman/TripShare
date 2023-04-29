@@ -38,7 +38,7 @@ const Rides = () => {
   const handleJoinRide = async (rideID, userID, accessToken) => {
     setIsLoading(true);
     try {
-      await sendRequest(rideID, userID, accessToken);
+      await sendRequest(rideID, userID, accessToken); // Sends request to join ride to database
       setIsLoading(false);
       alert("Request sent");
       navigate("/requests");
@@ -50,7 +50,7 @@ const Rides = () => {
 
   return (
     <div className="find-rides-page">
-      {(!rides?.length>0 || isLoading) && <LoadingSpinner asOverlay />}
+      {isLoading && <LoadingSpinner asOverlay />}
       {rides.length > 0 ? (
         <>
           <div className="sort">

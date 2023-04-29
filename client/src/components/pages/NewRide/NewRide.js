@@ -19,7 +19,7 @@ const NewRide = (props) => {
   const [timeChosen, setTimeChosen] = useState(false);
   const [role, setRole] = useState("passenger");
   const [isLoading, setIsLoading] = useState(false);
-  const MapContainerWithLoader = withMapLoader(MapContainer);
+  const MapContainerWithLoader = withMapLoader(MapContainer); // HOC to load map
 
   // Toggle between passenger and driver before creating a ride
   const toggleRole = () => {
@@ -29,11 +29,11 @@ const NewRide = (props) => {
   
   const handleConfirm = async (event) => {
 
-    //prevent default form submission
     event.preventDefault();
 
+    // Prevents user from submitting form if they have not selected an origin and destination
     if (origin && destination) {
-      setIsLoading(true);
+      setIsLoading(true); // Show loading spinner while ride is being created
       try {
         await newRide(
           role,
@@ -76,14 +76,6 @@ const NewRide = (props) => {
             setTimeChosen={setTimeChosen}
             handleSubmit={handleConfirm}
           />
-          {/* <div className="button-container">
-            <button
-              className="confirm-button"
-              onClick={handleConfirm}
-            >
-              Confirm
-            </button>
-          </div> */}
       </Card>
     </div>
   );

@@ -23,11 +23,11 @@ const Requests = () => {
   // Accept request
   const handleAcceptRequest = async (requestID, userID, accessToken) => {
     try {
-      setIsLoading(true);
-      await acceptRequest(requestID, userID, accessToken);
+      setIsLoading(true); // Sets loading to true while request is being accepted to show loading spinner
+      await acceptRequest(requestID, userID, accessToken); // Changes request status to "accepted" in database and cancels all other requests for the same ride
       alert("Request accepted");
       setIsLoading(false);
-      rerender();
+      rerender(); // Rerenders the page to update the list of requests
     } catch (error) {
       setIsLoading(false);
       alert("Error accepting request:", error);
@@ -38,7 +38,7 @@ const Requests = () => {
   const handleCancelRequest = async (requestID, userID, accessToken) => {
     try {
       setIsLoading(true);
-      await cancelRequest(requestID, userID, accessToken);
+      await cancelRequest(requestID, userID, accessToken); // Changes request status to "canceled" in database
       setIsLoading(false);
       alert("Request canceled");
       rerender();
@@ -50,7 +50,7 @@ const Requests = () => {
 
   return (
     <div className="requests-container">
-      {(isLoading || !ride?.role) && <LoadingSpinner asOverlay />}
+      {isLoading && <LoadingSpinner asOverlay />}
       {ride?._id && (
         <div>
           <h2>Your Ride:</h2>
@@ -78,7 +78,7 @@ const Requests = () => {
       )}
 
       <h2>Pending Requests:</h2>
-      {pendingRequests.length > 0 ? (
+      {pendingRequests?.length > 0 ? (
         <ul className="requests-list">
           {pendingRequests.map((request, index) => (
             <li key={index} className="request-item">
@@ -124,7 +124,7 @@ const Requests = () => {
       )}
 
       <h2>Accepted Requests:</h2>
-      {acceptedRequests.length > 0 ? (
+      {acceptedRequests?.length > 0 ? (
         <ul className="requests-list">
           {acceptedRequests.map((request, index) => (
             <li key={index} className="request-item">
@@ -149,7 +149,7 @@ const Requests = () => {
       )}
 
       <h2>Canceled Requests:</h2>
-      {canceledRequests.length > 0 ? (
+      {canceledRequests?.length > 0 ? (
         <ul className="requests-list">
           {canceledRequests.map((request, index) => (
             <li key={index} className="request-item">

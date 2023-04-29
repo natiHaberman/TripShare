@@ -34,7 +34,7 @@ const handleLogin = async (req, res, next) => {
   const match = await bcrypt.compare(password, foundUser.password);
   if (match) {
     const userID = foundUser._id;
-    
+
     // creates access token that will be stored in local storage
     const accessToken = jwt.sign(
       {
@@ -43,15 +43,14 @@ const handleLogin = async (req, res, next) => {
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "20m" }
     );
-    
+
     // creates refresh token that will be stored in a cookie
     const refreshToken = jwt.sign(
       { userID: userID },
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: "3h" }
-
     );
-    
+
     // sets cookie to refresh token
     res.cookie("jwt", refreshToken, {
       httpOnly: true,

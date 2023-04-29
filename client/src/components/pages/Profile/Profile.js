@@ -20,7 +20,7 @@ const Profile = () => {
 
   // Fetches user data and reviews on mount
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true); // sets loading to true while fetching data to show loading spinner
     (async () => {
       const user = await findUser(userID, accessToken);
       setUser(user);
@@ -39,7 +39,7 @@ const Profile = () => {
     if (currentEmail !== user.email) {
       try {
         const updateProperty = "email";
-        await updateUser(accessToken, userID, updateProperty, currentEmail);
+        await updateUser(accessToken, userID, updateProperty, currentEmail); // updates user email in database
         alert("Changes saved!");
       } catch (error) {
         setIsLoading(false);
@@ -49,7 +49,7 @@ const Profile = () => {
     if (currentCarModel !== user.model) {
       try {
         const updateProperty = "model";
-        await updateUser(accessToken, userID, updateProperty, currentCarModel);
+        await updateUser(accessToken, userID, updateProperty, currentCarModel); // updates user car model in database
         alert("Changes saved!");
       } catch (error) {
         setIsLoading(false);
@@ -61,7 +61,7 @@ const Profile = () => {
 
   return (
     <div className="user-profile">
-      {(isLoading || !user?._id) && <LoadingSpinner asOverlay />}
+      {isLoading && <LoadingSpinner asOverlay />}
       <div className="user-info">
         <h2>Username: {user.username}</h2>
         <div className="inline-field">

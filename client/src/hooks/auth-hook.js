@@ -1,27 +1,62 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { checkTokenExpiration } from "../util/checkTokenExpiration";
 
 export const useAuth = () => {
   const [accessToken, setAccessToken] = useState("");
   const [userID, setUserID] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Check if access token is stored in local storage and set it in state if it is and set isLoggedIn to true
+
+  // Set access token and user ID in local storage and state upon first load
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("userData"));
-    if (storedData && storedData.accessToken) {
+    if (
+      storedData &&
+      storedData.accessToken &&
+      !checkTokenExpiration(storedData.accessToken)
+    ) {
       setAccessToken(storedData.accessToken);
       setUserID(storedData.userID);
       setIsLoggedIn(true);
     }
   }, []);
 
+  // Every 5 minutes, if user is logged in, refresh access token and set in local storage and state
+  useEffect(() => {
+    let refreshInterval;
+    refreshInterval = setInterval(() => {
+
+      if (isLoggedIn) {
+        (async () => {
+          let newAccessToken;
+          try {
+            newAccessToken = await refresh();
+            setAccessToken(newAccessToken);
+            localStorage.setItem(
+              "userData",
+              JSON.stringify({
+                userID: userID,
+                accessToken: newAccessToken,
+              })
+            );
+          } catch (err) {
+            console.log(err);
+            logout();
+          }
+        })();
+      }
+    }, 5 * 60 * 1000);
+
+    return () => clearInterval(refreshInterval);
+  }, [accessToken]);
+
   // Login function that sets auth-context state and local storage
   const login = async (email, password) => {
+    console.log(process.env.REACT_APP_BACKEND_URL);
     try {
       const response = await axios.post(
-        //`${process.env.https://joy-ride.herokuapp.com}/user/auth`,
-        `https://joy-ride.herokuapp.com/user/auth`,
+        `${process.env.REACT_APP_BACKEND_URL}/user/auth`,
         {
           email,
           password,
@@ -32,6 +67,7 @@ export const useAuth = () => {
         }
       );
 
+      // Set the access token, user ID, and logged in state
       setAccessToken(response.data.accessToken);
       setUserID(response.data.userID);
       setIsLoggedIn(true);
@@ -55,7 +91,7 @@ export const useAuth = () => {
   const register = async (email, password, username) => {
     try {
       await axios.post(
-        `https://joy-ride.herokuapp.com/user/register`,
+        `${process.env.REACT_APP_BACKEND_URL}/user/register`,
         {
           email,
           password,
@@ -76,7 +112,7 @@ export const useAuth = () => {
   // Logout function that clears auth-context state and local storage and redirects to login page
   const logout = async () => {
     try {
-      await axios.get(`https://joy-ride.herokuapp.com/user/logout`, {
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });
@@ -94,7 +130,7 @@ export const useAuth = () => {
   const refresh = async () => {
     try {
       const response = await axios.get(
-        "https://joy-ride.herokuapp.com/user/refresh",
+        `${process.env.REACT_APP_BACKEND_URL}/user/refresh`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -102,15 +138,8 @@ export const useAuth = () => {
           withCredentials: true,
         }
       );
-      localStorage.setItem(
-        "userData",
-        JSON.stringify({
-          userID: response.data.userID,
-          accessToken: response.data.accessToken,
-        })
-      );
-      setAccessToken(response);
-      console.log("Access token refreshed");
+
+      return response.data.accessToken;
     } catch {
       throw new Error("Session expired, please log in to continue");
     }

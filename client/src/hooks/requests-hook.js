@@ -48,12 +48,12 @@ export const useRequests = () => {
     })();
   }, [userID, accessToken, rerenderFlag]);
 
-  // Rerenders page when request is accepted or canceled
+  // Rerenders page when a request is accepted or canceled
   const rerender = () => {
     setRerenderFlag((prev) => !prev);
   };
 
-  // Fetches data using API
+  // Fetches the data and merges it into one array
   const fetchData = async () => {
     try {
       const pendingRidesData = await fetchRides(accessToken, "pending");
@@ -76,7 +76,8 @@ export const useRequests = () => {
 
   // Sets user's ride data
   const setUserRide = async (ridesData, userData, userID) => {
-    // Finds ride associated with user and returns if it doesn't exist
+
+    // Finds ride associated with user to display on ongoing ride and requests page.
     const ride = ridesData.find((r) => r._id === userData.ride);
     if (!ride){
       throw new Error("No user ride");
@@ -100,7 +101,7 @@ export const useRequests = () => {
       }
     }
 
-    // Sets ride data to be displayed on page
+    // Merges ride data into one object
     const rideData = {
       _id: ride._id,
       origin: ride.origin,
@@ -119,11 +120,13 @@ export const useRequests = () => {
     setRide(rideData);
   };
 
+  // Merges and sorts data into three arrays based on request status
   const sortData = async (ridesData, requestData, userData, accessToken) => {
     const pending = [];
     const accepted = [];
     const canceled = [];
     for (const request of requestData) {
+
       // finds ride associated with request and continues if it doesn't exist
       const ride = ridesData.find((r) => r._id === request.ride);
       if (!ride) continue;
@@ -141,7 +144,7 @@ export const useRequests = () => {
       else if (request.recipient === userID) requestRole = "sender";
       else continue;
 
-      // Finds other user's data
+      // Gets other user's data
       let otherUser;
       try {
         otherUser = await findUser(request[requestRole], accessToken);

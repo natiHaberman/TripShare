@@ -1,18 +1,19 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import React from 'react'
+import React from "react";
 
-const CustomDatePicker = props => {
+const CustomDatePicker = (props) => {
   return (
     <DatePicker
-    selected={props.departureTime}
-    onChange={props.onChange}
-    showTimeSelect
-    showTimeSelectOnly
-    timeIntervals={5}
-    timeCaption="Departure Time"
-    dateFormat="h:mm aa"
-  />  )
-}
+      selected={props.departureTime}
+      onChange={props.onChange}
+      showTimeSelect
+      showTimeSelectOnly
+      timeIntervals={5}
+      timeCaption="Departure Time"
+      dateFormat="h:mm aa"
+    />
+  );
+};
 
-export default CustomDatePicker
+export default CustomDatePicker;

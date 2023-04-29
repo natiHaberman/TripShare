@@ -38,7 +38,7 @@ function OngoingRide() {
     try {
       setIsLoading(true);
       const rideID = ride._id;
-      await cancelRide(rideID, userID, accessToken);
+      await cancelRide(rideID, userID, accessToken); // Changes ride status to canceled in database
       alert("Ride canceled");
       setIsLoading(false);
       navigate("/");
@@ -51,27 +51,26 @@ function OngoingRide() {
   // Complete ride
   const handleFinish = async (rating, review) => {
     try {
-      setIsLoading(true);
+      setIsLoading(true); // Show loading spinner while ride is being completed
       const rideID = ride._id;
-      completeRide(rideID, userID, accessToken);
+      completeRide(rideID, userID, accessToken); // Changes ride status to completed in database
       navigate("/");
     } catch (err) {
       setIsLoading(false);
       alert(err.message);
     }
     try {
-      //(authorID, subjectID, rating, text, accessToken)
+      setIsLoading(true);
       const authorID = userID;
       const subjectID = ride.userID;
       const text = review;
-
       await createReview(
         authorID,
         subjectID,
         rating,
         text,
         accessToken
-      );
+      ); // Creates review in database
       setIsLoading(false);
       alert("Ride finished");
     } catch (err) {

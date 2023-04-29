@@ -6,7 +6,9 @@ const MapInput = ({ placeholder, value, setValue, onPlaceSelected }) => {
 
   useEffect(() => {
     if (window.google) {
-      const autocomplete = new window.google.maps.places.Autocomplete(inputRef.current);
+      const autocomplete = new window.google.maps.places.Autocomplete(
+        inputRef.current
+      );
       autocomplete.addListener("place_changed", () => {
         const place = autocomplete.getPlace();
         setValue(place.formatted_address);
@@ -18,22 +20,27 @@ const MapInput = ({ placeholder, value, setValue, onPlaceSelected }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      inputRef.current.blur(); // Remove focus from the input field
-    }
-    if (e.type === "click") {
-      e.preventDefault();
-      inputRef.current.blur(); // Remove focus from the input field
+      e.stopPropagation();
+
+      // Trigger a click event on the first suggestion in the dropdown
+      const suggestion = document.querySelector(".pac-item");
+      if (suggestion) {
+        suggestion.click();
+      }
     }
   };
 
   return (
-    <input
-      ref={inputRef}
-      placeholder={placeholder}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      onKeyDown={handleKeyPress} 
-    />
+    <form>
+      <input
+        ref={inputRef}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleKeyPress}
+        className="location-input"
+      />
+    </form>
   );
 };
 

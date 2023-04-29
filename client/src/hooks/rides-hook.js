@@ -40,13 +40,14 @@ export const useRides = () => {
     }
   };
 
-  // Function to filter out rides that the user is a part of
+  // The rides page that uses this function needs only the rides the user is not a part of so they can join them
+  // This function filters out the rides the user is a part of
   const filterRides = (ridesCopy, userID) =>
     ridesCopy.filter((ride) => {
       return userID !== ride.driver && userID !== ride.passenger;
     });
 
-  // Function to enter user data into each ride object
+  // Merges the ride data with the user data of the ride creator with the ride data to to concentrate all the data in one object
   const processRides = async (rides, accessToken) => {
     const ridesCopy = [...rides];
     let updatedRides;

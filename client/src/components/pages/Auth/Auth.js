@@ -35,7 +35,7 @@ function Auth() {
   });
   const { login, register } = useContext(AuthContext);
 
-  // Toggle between log in and registration modes in ToggleButton
+  // Toggle between log in and registration modes in order to display the correct form 
   const toggleHasAccount = () => {
     setHasAccount((prevHasAccount) => !prevHasAccount);
   };
