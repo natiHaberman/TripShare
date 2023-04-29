@@ -1,10 +1,9 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const fetchRequests = async (userID, accessToken) => {
   try {
     const uid = userID;
     const response = await axios.get(
-      `https://joy-ride.herokuapp.com/requests/index/${uid}`,
+      `${process.env.REACT_APP_BACKEND_URL}/requests/index/${uid}`,
       {
         headers: {
           "Content-Type": "application/json",

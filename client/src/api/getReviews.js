@@ -1,9 +1,8 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const fetchReviews = async (accessToken, uid, type) => {
   try {
     const response = await axios.get(
-      `https://joy-ride.herokuapp.com/reviews/all/${uid}/${type}`,
+      `${process.env.REACT_APP_BACKEND_URL}/reviews/all/${uid}/${type}`,
       {
         headers: {
           "Content-Type": "application/json",

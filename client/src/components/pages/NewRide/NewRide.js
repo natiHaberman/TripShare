@@ -28,7 +28,10 @@ const NewRide = (props) => {
 
   
   const handleConfirm = async (event) => {
+
     //prevent default form submission
+    event.preventDefault();
+
     if (origin && destination) {
       setIsLoading(true);
       try {
@@ -71,15 +74,16 @@ const NewRide = (props) => {
             setDepartureTime={setDepartureTime}
             timeChosen={timeChosen}
             setTimeChosen={setTimeChosen}
+            handleSubmit={handleConfirm}
           />
-          <div className="button-container">
+          {/* <div className="button-container">
             <button
               className="confirm-button"
               onClick={handleConfirm}
             >
               Confirm
             </button>
-          </div>
+          </div> */}
       </Card>
     </div>
   );

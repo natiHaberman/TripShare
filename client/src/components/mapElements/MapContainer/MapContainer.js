@@ -45,8 +45,17 @@ export const MapContainer = ({
               onPlaceSelected={onDestinationSelected}
               className="location-input"
             />
-          </form>
             <Map className="map" origin={origin} destination={destination} />
+
+            <div className="button-container">
+            <button
+              className="confirm-button"
+              type="submit"
+>
+              Confirm
+            </button>
+          </div>
+          </form>
 
     </div>
   );

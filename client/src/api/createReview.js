@@ -1,5 +1,4 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const createReview = async (authorID, subjectID, rating, text, accessToken) => {
   try {
     console.log("authorID", authorID)
@@ -7,7 +6,7 @@ export const createReview = async (authorID, subjectID, rating, text, accessToke
     console.log("rating", rating)
     console.log("text", text)
     await axios.post(
-      `https://joy-ride.herokuapp.com/reviews/new`,
+      `${process.env.REACT_APP_BACKEND_URL}/reviews/new`,
       { authorID, subjectID, rating, text },
       {
         headers: {

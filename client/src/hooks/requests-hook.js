@@ -16,11 +16,21 @@ export const useRequests = () => {
   // Calls helper functions to fetch and sort data on mount and on rerender for requests and ongoing ride pages
   useEffect(() => {
     (async () => {
-      const [ridesData, requestData, userData] = await fetchData();
-      if (!ridesData || !requestData || !userData) {
-        throw new Error("Error fetching data");
+      let ridesData, requestData, userData;
+      try {
+        [ridesData, requestData, userData] = await fetchData();
+        if (!ridesData || !requestData || !userData) {
+          setRide({role: "none"}); // Used for page rendering when user doesn't have a ride
+        }
+      } catch (err) {
+        setRide({role: "none"});
       }
-      await setUserRide(ridesData, userData, userID);
+      try{
+        await setUserRide(ridesData, userData, userID);
+      }
+      catch(err){
+        setRide({role: "none"});
+      }
       let pending, accepted, canceled;
       try {
         [pending, accepted, canceled] = await sortData(
@@ -30,7 +40,7 @@ export const useRequests = () => {
           accessToken
         );
       } catch (err) {
-        throw new Error("Error sorting data");
+        setRide({role: "none"});
       }
       setPendingRequests(pending);
       setAcceptedRequests(accepted);
@@ -50,7 +60,12 @@ export const useRequests = () => {
       const ongoingRidesData = await fetchRides(accessToken, "ongoing");
       const completedRidesData = await fetchRides(accessToken, "completed");
       const canceledRidesData = await fetchRides(accessToken, "canceled");
-      const ridesData = [...pendingRidesData, ...ongoingRidesData, ...completedRidesData, ...canceledRidesData];
+      const ridesData = [
+        ...pendingRidesData,
+        ...ongoingRidesData,
+        ...completedRidesData,
+        ...canceledRidesData,
+      ];
       const requestData = await fetchRequests(userID, accessToken);
       const userData = await findUser(userID, accessToken);
       return [ridesData, requestData, userData];
@@ -63,7 +78,9 @@ export const useRequests = () => {
   const setUserRide = async (ridesData, userData, userID) => {
     // Finds ride associated with user and returns if it doesn't exist
     const ride = ridesData.find((r) => r._id === userData.ride);
-    if (!ride) return {role: "none"}; //  Used for requests page rendering
+    if (!ride){
+      throw new Error("No user ride");
+    }
     let role;
 
     // Sets user's role in ride
@@ -72,14 +89,13 @@ export const useRequests = () => {
     else return;
 
     // Finds other user's data
-    let otherUser,otherUserID;
+    let otherUser, otherUserID;
     if (ride.type === "ongoing") {
       if (role === "Passenger") otherUserID = ride.driver;
       else otherUserID = ride.passenger;
-      try{
+      try {
         otherUser = await findUser(otherUserID, accessToken);
-      }
-      catch(err){
+      } catch (err) {
         throw new Error("Error finding other user");
       }
     }
@@ -108,7 +124,6 @@ export const useRequests = () => {
     const accepted = [];
     const canceled = [];
     for (const request of requestData) {
-      
       // finds ride associated with request and continues if it doesn't exist
       const ride = ridesData.find((r) => r._id === request.ride);
       if (!ride) continue;

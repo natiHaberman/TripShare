@@ -1,9 +1,8 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const cancelRide = async (rideID, userID, accessToken) => {
   try {
     const response = await axios.delete(
-      `https://joy-ride.herokuapp.com/rides/cancel`,
+      `${process.env.REACT_APP_BACKEND_URL}/rides/cancel`,
       {
         headers: {
           "Content-Type": "application/json",

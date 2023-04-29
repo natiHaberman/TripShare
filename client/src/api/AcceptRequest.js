@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const acceptRequest = async (requestID, userID, accessToken) => {
   try {
     const response = await axios.patch(
-      `https://joy-ride.herokuapp.com/requests/accept`,
+      `${process.env.REACT_APP_BACKEND_URL}/requests/accept`,
       {requestID, userID },
       {
         headers: {

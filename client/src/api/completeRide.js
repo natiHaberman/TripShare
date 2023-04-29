@@ -1,9 +1,8 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const completeRide = async (rideID, userID, accessToken) => {
     try {
         const response = await axios.patch(
-        `https://joy-ride.herokuapp.com/rides/complete`,
+        `${process.env.REACT_APP_BACKEND_URL}/rides/complete`,
         { rideID, userID },
         {
             headers: {

@@ -1,9 +1,8 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const updateUser = async (accessToken, userID, updateProperty, updateData) => {
     try {
         const response = await axios.patch(
-        `https://joy-ride.herokuapp.com/user/update`,
+        `${process.env.REACT_APP_BACKEND_URL}/user/update`,
         { userID, updateProperty, updateData},
         {
             headers: {

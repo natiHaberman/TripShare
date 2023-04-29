@@ -17,7 +17,7 @@ export const useAuth = () => {
   }, []);
 
   // Login function that sets auth-context state and local storage
-  const login =async (email, password) => {
+  const login = async (email, password) => {
     try {
       const response = await axios.post(
         //`${process.env.https://joy-ride.herokuapp.com}/user/auth`,
@@ -45,10 +45,11 @@ export const useAuth = () => {
         })
       );
     } catch (error) {
-      throw new Error("Login failed, please check your credentials and try again");
+      throw new Error(
+        "Login failed, please check your credentials and try again"
+      );
     }
   };
-
 
   // Register function that calls login function after successful registration
   const register = async (email, password, username) => {
@@ -65,56 +66,53 @@ export const useAuth = () => {
           withCredentials: true,
         }
       );
-    }
-    catch (err) {
+    } catch (err) {
       console.log(err);
       throw new Error("Registration failed, please try again");
     }
     login(email, password);
   };
 
-
   // Logout function that clears auth-context state and local storage and redirects to login page
   const logout = async () => {
     try {
-      await axios.get(
-        `https://joy-ride.herokuapp.com/user/logout`,
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
-    setAccessToken("");
-    setUserID("");
-    setIsLoggedIn(false);
-    // Remove the access token from local storage
-    localStorage.removeItem("userData");
-  }
-  catch (error) {
-    console.log(error);
-  }
+      await axios.get(`https://joy-ride.herokuapp.com/user/logout`, {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      });
+      setAccessToken("");
+      setUserID("");
+      setIsLoggedIn(false);
+      // Remove the access token from local storage
+      localStorage.removeItem("userData");
+    } catch (error) {
+      console.log(error);
+    }
   };
-
 
   // Refresh function that renews the access token
   const refresh = async () => {
     try {
-      const response = await axios.get("https://joy-ride.herokuapp.com/user/refresh", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      withCredentials: true,
-    });
-    localStorage.setItem(
-      "userData",
-      JSON.stringify({
-        userID: response.data.userID,
-        accessToken: response.data.accessToken,
-      })
-    );
+      const response = await axios.get(
+        "https://joy-ride.herokuapp.com/user/refresh",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({
+          userID: response.data.userID,
+          accessToken: response.data.accessToken,
+        })
+      );
       setAccessToken(response);
+      console.log("Access token refreshed");
     } catch {
-      logout();
+      throw new Error("Session expired, please log in to continue");
     }
   };
 

@@ -6,18 +6,22 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 
 const connectDB = require('./config/dbConn');
-const corsOptions = require('./config/corsOptions');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
-const credentials = require('./middleware/credentials');
 const verifyJWT = require('./middleware/verifyJWT');
 const HttpError = require('./models/http-error');
 const PORT = process.env.PORT || 5000;
 
 connectDB();
 app.use(logger);
-app.use(credentials);
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      callback(null, true);
+    },
+    credentials: true,
+  })
+);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());

@@ -18,6 +18,11 @@ const MapInput = ({ placeholder, value, setValue, onPlaceSelected }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
+      inputRef.current.blur(); // Remove focus from the input field
+    }
+    if (e.type === "click") {
+      e.preventDefault();
+      inputRef.current.blur(); // Remove focus from the input field
     }
   };
 

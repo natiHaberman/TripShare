@@ -1,9 +1,8 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const sendRequest = async (rideID, userID, accessToken) => {
   try {
     const response = await axios.post(
-      `https://joy-ride.herokuapp.com/requests/new`,
+      `${process.env.REACT_APP_BACKEND_URL}/requests/new`,
       { rideID, userID },
       {
         headers: {

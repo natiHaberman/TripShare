@@ -48,7 +48,8 @@ const handleLogin = async (req, res, next) => {
     const refreshToken = jwt.sign(
       { userID: userID },
       process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: "61m" }
+      { expiresIn: "3h" }
+
     );
     
     // sets cookie to refresh token
@@ -56,7 +57,7 @@ const handleLogin = async (req, res, next) => {
       httpOnly: true,
       sameSite: "None",
       secure: true,
-      maxAge: 61 * 60 * 1000,
+      maxAge: 3 * 60 * 60 * 1000,
     });
     foundUser.refreshToken = refreshToken;
     await foundUser.save();

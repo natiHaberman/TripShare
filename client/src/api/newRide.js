@@ -1,5 +1,4 @@
-import axios from "axios";
-
+import axios from 'axios';
 export const newRide = async (
   role,
   userID,
@@ -10,7 +9,7 @@ export const newRide = async (
 ) => {
   try {
     await axios.post(
-      `https://joy-ride.herokuapp.com/rides/new`,
+      `${process.env.REACT_APP_BACKEND_URL}/rides/new`,
       { role, userID, origin, destination, departureTime },
       {
         headers: {

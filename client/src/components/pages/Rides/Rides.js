@@ -38,7 +38,7 @@ const Rides = () => {
   const handleJoinRide = async (rideID, userID, accessToken) => {
     setIsLoading(true);
     try {
-      const response = await sendRequest(rideID, userID, accessToken);
+      await sendRequest(rideID, userID, accessToken);
       setIsLoading(false);
       alert("Request sent");
       navigate("/requests");
