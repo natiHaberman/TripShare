@@ -1,4 +1,7 @@
 Created with the goal of improving my web-development capabilities, this project is a live full stack web-application built using the MERN stack. JoyRide is a ridesharing web application aimed at enabling people to connect in order to carpool. 
+
+Live Website: https://joyride-72ed1.web.app
+
 These are the following areas in which I would like to improve the project:
 
 -Fix the buggy MapInput component which causes rerendering when hitting enter.
